@@ -13,7 +13,7 @@ Which takes data in three ways:
 
 1. Add to field with usual input and voice option.
 2. Add with mouse hover and click button "Icon" to element in your Chrome browser with extension.
-3. Add with Social Media API throw the link to contact-page and put it to new contact-field after clicking "Link" button & to the Google Map as marker.
+3. Add with Social Media API throw the link to contact-page and put it to new contact-field after clicking "Link" button & to the Google Map as marker with property to save it to Local Storage.
 
 Which shows data in three ways:
 
