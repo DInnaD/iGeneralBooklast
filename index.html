@@ -93,8 +93,8 @@
     return false;
   }	 
 	 
-    var jsonkey = key.value;
-    //console.log(jsonkey);
+    var jsonkey = key;//key.value;
+    console.log(jsonkey);
 	/*
     // Local Storage Test
     localStorage.setItem('test', 'Hello World');
@@ -111,9 +111,9 @@
     // Add to array
     bookmarks.push(key);
     // Set to localStorage
-    localStorage.setItem('key', JSON.stringify(bookmarks));
+   // localStorage.setItem('key', JSON.stringify(bookmarks));
   
-	    //localStorage[key.name] = JSON.stringify(jsonkey);
+	    localStorage[key.name] = JSON.stringify(jsonkey);
 	  }
 	/*} catch (e) {
   if (e == QUOTA_EXCEEDED_ERR) {
