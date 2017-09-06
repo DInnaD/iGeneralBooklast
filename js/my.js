@@ -1,10 +1,10 @@
-(function() {
-  document.getElementById('submit_button').addEventListener('click', function(e) {
+/*(function() {*/
+ // document.getElementById('submit_button').addEventListener('click', function(e) {
+    //e.preventDefault();
+  let form = document.getElementById('storageForm').addEventListener('submit', function(e) {
+    /*console.log('it works');*/
     e.preventDefault();
-  /*let form = document.getElementById('storageForm').addEventListener('submit', function(e) {
-    console.log('it works');
-    e.preventDefault();
-  });*/
+ /* });*/
    
  /*
     // Local Storage Test
@@ -25,12 +25,12 @@
     }
    
 
-    //key.name = form.getElementsByClassName('keyName')[0].value;//
-    key.name = document.getElementById("keyName").value;
+    key.name = form.getElementsByClassName('keyName')[0].value;//
+    //key.name = document.getElementById("keyName").value;
           //console.log(keyName);
           //console.log(key.name);
-    //key.value = form.getElementsByClassName('keyValue')[0].value;//
-    key.value = document.getElementById("keyValue").value;
+    key.value = form.getElementsByClassName('keyValue')[0].value;//
+    //key.value = document.getElementById("keyValue").value;
          //console.log(key);
         // e.preventDefault();
          //});
@@ -63,9 +63,9 @@
     var item = JSON.parse(localStorage[key.name]);
     
     
-    console.log(item.Id);
-    console.log(item.Name);
-    console.log(item.Value);
+    //console.log(item.Id);
+    //console.log(item.Name);
+    //console.log(item.Value);
     
     
     var pieces = "Key: " + key.name + ", Value: " + key.value +
