@@ -12,10 +12,11 @@
     if(itemExists !== null) {
       itemExists.remove();
     }
-    key.name = form.getElementsByClassName('keyName')[0].value;//document.getElementById("keyName").value;
-    //console.log(key.name);
-    key.value = form.getElementsByClassName('keyValue')[0].value;//document.getElementById("keyValue").value;
+   let form = document.getElementById('storageForm');
 
+    key.name = storageForm.getElementsByClassName('keyName')[0].value;//document.getElementById("keyName").value;
+    //console.log(key.name);
+    key.value = storageForm.getElementsByClassName('keyValue')[0].value;//document.getElementById("keyValue").value;
      if(!validateForm(keyName, keyValue)){//with getElementById
     return false;
   }
