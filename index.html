@@ -121,6 +121,8 @@
       }      
       return false;
     };
+	 // Clear form
+  document.getElementById('submit_button').reset();
   });
   document.getElementById('clear_button').addEventListener('click', function(e) {
     e.preventDefault();
@@ -132,8 +134,7 @@
     var nodata = document.getElementById("nodata");
     nodata.classList.remove("hidden");
   });
-	  // Clear form
-  document.getElementById('storageForm').reset();
+	  
 })();
 </script>
 			<!--div class="jumbotron">	
