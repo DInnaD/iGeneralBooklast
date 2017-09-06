@@ -89,9 +89,37 @@
     key.value = document.getElementById("keyValue").value;
     //console.log(key.value);
 	 //console.log(key);
+ if(!validateForm(keyName, keyValue)){//with getElementById
+    return false;
+  }	 
+	 
     var jsonkey = key.value;
     //console.log(jsonkey);
-    localStorage[key.name] = JSON.stringify(jsonkey);
+	/*
+    // Local Storage Test
+    localStorage.setItem('test', 'Hello World');
+    console.log(localStorage.getItem('test'));
+    localStorage.removeItem('test');
+    console.log(localStorage.getItem('test'));
+  */  
+// Set to localStorage until 5MB
+    try {	 
+      // Test if bookmarks is null
+  if(localStorage.getItem('bookmarks') === null){
+    // Init array
+    var bookmarks = [];
+    // Add to array
+    bookmarks.push(key);
+    // Set to localStorage
+    localStorage.setItem('key', JSON.stringify(bookmarks));
+  
+	    //localStorage[key.name] = JSON.stringify(jsonkey);
+	  }
+	} catch (e) {
+  if (e == QUOTA_EXCEEDED_ERR) {
+   alert('Превышен лимит');
+  }
+}	    
     var nodata = document.getElementById("nodata");
     console.log(nodata);
     var nodataHidden = hasClass(nodata, 'hidden');
