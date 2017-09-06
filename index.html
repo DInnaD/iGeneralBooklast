@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta content="IE=edge" http-equiv="X-UA-Compatible">
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<meta content="" name="description">
+	<meta content="" name="author">
+	<title>iGeneralBook</title><!-- Bootstrap Core CSS -->
+	<link href="css/bootstrap.min.css" rel="stylesheet"><!-- Custom CSS -->
+	<link href="css/business-casual.css" rel="stylesheet"><!-- Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css"><!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	<link href="libs/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet"><!-- Bootstrap core CSS -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+</head>
+<body onload="fetchBookmarks()">
+	<div id="mymap"></div>
+	<div id="contactform">
+		<div class="container" style="position: relative;">
+			<input id="search" name="search" onkeyup="search()" placeholder="Search.." type="text"> <button onclick="talk()" style="background: none; border:none; padding-top: 3px;"><i aria-hidden="true" class="fa fa-microphone"></i></button> <button onclick="stop()" style="background: none; border:none; padding-top: 3px;"><i aria-hidden="true" class="fa fa-microphone-slash"></i></button>
+			<hr>
+			<div class="brand">
+				<a class="btn btn-circle" href="#" style="color: #42DCA3; !important; border: none ! important;"><i aria-hidden="true" class="fa fa-info-circle" style="color: #42DCA3; !important;"></i></a>General Book
+			</div>
+			<div id="navigation">
+				<ul class="nav-list">
+					<li class="btn btn-circle" id="js-show-all" onclick="document.getElementById('bookmarksResults').style.display='block'" style="padding: 0px; font-size: 45px; color: #42DCA3; text-decoration: underline;"><i aria-hidden="true" class="fa fa-users"></i></li>
+					<li class="btn btn-circle" id="js-search" onclick="document.getElementById('demo').style.display='block'" style="padding: 0px; font-size: 45px; color: #42DCA3; text-decoration: underline;"><i aria-hidden="true" class="fa fa-search"></i></li>
+					<li class="btn btn-circle" id="js-add-new" onclick="document.getElementById('form').style.display='block'">
+						<a href="#" id="toggler" style="padding: 0px; font-size: 45px; color: #42DCA3; text-decoration: underline;"><i aria-hidden="true" class="fa fa-plus"></i></a> <!--i class="fa fa-plus" aria-hidden="true"></i-->
+					</li>
+				</ul>
+			</div>
+		</div><!-- /container -->
+	</div><!--"black"-->
+	<div class="con" style=" background: #000; position: relative; text-align: center; text-shadow: 1px 1px 2px rgba(0,0,0,0.5); font-family: ; max-width: 100%;">
+		<div class="container">
+			<div class="jumbotron">
+				<form id="form" name="form">
+					<div class="container" style="color: black; padding: 0px 400px;">
+						<div class="form-group">
+							<label></label> <input class="form-control name" id="siteName" name="name" placeholder="Name" type="text">
+						</div>
+						<div class="form-group">
+							<label></label> <input class="form-control url" id="siteUrl" name="url" placeholder="URL" type="text">
+						</div><button class="btn btn-circle brand" style="float: left; padding-right: 0px;" type="submit">Submit</button>
+					</div>
+				</form>
+				<form id="formEdit" name="formEdit" style="display:none">
+					<div class="container" style="color: black; padding: 0px 400px;">
+						<div class="form-group">
+							<label></label> <input class="form-control name" id="siteName" name="name" placeholder="Name" type="text">
+						</div>
+						<div class="form-group">
+							<label></label> <input class="form-control url" id="siteUrl" name="url" placeholder="URL" type="text">
+						</div><button class="btn btn-circle brand" style="float: left; padding-right: 0px;" type="submit">Submit</button>
+					</div>
+				</form>
+				<div class="row marketing">
+					<div class="col-lg-12">
+						<div id="bookmarksResults"></div>
+					</div>
+				</div><!--footer class="footer">
+        <p></p>
+      </footer-->
+			</div><!-- /container -->
+		</div>
+	</div>
+</body>
+</html>
