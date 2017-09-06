@@ -85,19 +85,19 @@
       itemExists.remove();
     }
     key.name = document.getElementById("keyName").value;
-    console.log(key.name);
+    //console.log(key.name);
     key.value = document.getElementById("keyValue").value;
-    console.log(key.value);
-	 console.log(key);
+    //console.log(key.value);
+	 //console.log(key);
     var jsonkey = key.value;
     //console.log(jsonkey);
     localStorage[key.name] = JSON.stringify(jsonkey);
     var nodata = document.getElementById("nodata");
-    
+    console.log(nodata);
     var nodataHidden = hasClass(nodata, 'hidden');
-    if(nodataHidden == false) {
+    /*if(nodataHidden == false) {
       nodata.classList.add("hidden");
-    }
+    }*/
     
     var storageList = document.getElementById("storageList");
     var listItem = document.createElement("li");
@@ -106,7 +106,11 @@
     //console.log(item.Id);
     //console.log(item.Name);
     //console.log(item.Value);
-    var pieces = "Key: " + key.name + ", Value: " + key.value;
+    var pieces = "Key: " + key.name + ", Value: " + key.value +
+    ' <a class="toggler" class="btn btn-danger" href="#">More</a> ' +
+    ' <a class="btn btn-default" target="_blank" href="' + url + '">Visit</a> ' +
+    ' <a storageWell.addEventListener("click", editBookmark(key.id)) class="btn btn-danger" href="#">Edite</a> ' +
+    ' <a storageWell.addEventListener("click", deleteBookmark(key.id)) class="btn btn-danger">Delete</a> ';
     var itemNode = document.createTextNode(pieces);
     listItem.appendChild(itemNode);
     storageList.appendChild(listItem);
