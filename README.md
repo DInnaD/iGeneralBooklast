@@ -1,5 +1,9 @@
 # iGeneralBooklast
-05.09.2017 Danylevska Inna https://dinnad.github.io/igeneralbook/ https://github.com/DInnaD/iGeneralBooklast/ 
+05.09.2017 Danylevska Inna 
+views: https://dinnad.github.io/igeneralbook/ 
+repository https://github.com/DInnaD/iGeneralBooklast/ 
+index.html https://github.com/DInnaD/iGeneralBooklast/blob/master/index.html
+main.js https://github.com/DInnaD/iGeneralBooklast/blob/master/js/main,js
 
 Description:
 
