@@ -21,8 +21,8 @@ form.getElementsByClassName('url')[0].value;
 let id = function generatId(){
 
   bookmark = {
-  bookmark.name = name,
-  bookmark.url = url,
+  bookmark.name = [],
+  bookmark.url = [],
   bookmark.id = id
   }
 
