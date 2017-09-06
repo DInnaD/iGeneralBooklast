@@ -21,8 +21,8 @@
 </head>
 <body>
 	<div id="mymap"></div>
-	<div id="contactform">
-		<div class="container" style="position: relative;">aaaaaaaaaa
+	<div id="contactform">aaaaaaaaaa
+		<div class="container" style="position: relative;">
 			<input id="search" name="search" onkeyup="search()" placeholder="Search.." type="text"> <button onclick="talk()" style="background: none; border:none; padding-top: 3px;"><i aria-hidden="true" class="fa fa-microphone"></i></button> <button onclick="stop()" style="background: none; border:none; padding-top: 3px;"><i aria-hidden="true" class="fa fa-microphone-slash"></i></button>
 			<hr>
 			<div class="brand">
@@ -135,9 +135,9 @@ var jsonkey = key.value;
     var listItem = document.createElement("li");
     listItem.setAttribute("id", key.name);
     var item = JSON.parse(localStorage[key.name]);
-    //console.log(item.Id);
-    //console.log(item.Name);
-    //console.log(item.Value);
+    console.log(item.Id);
+    console.log(item.Name);
+    console.log(item.Value);
     var pieces = "Key: " + key.name + ", Value: " + key.value +
     ' <a class="toggler" class="btn btn-danger" href="#">More</a> ' +
     ' <a class="btn btn-default" target="_blank" href="' + url + '">Visit</a> ' +
