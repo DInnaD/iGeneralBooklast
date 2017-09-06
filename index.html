@@ -75,9 +75,7 @@
 <script>
 (function() {
  document.getElementById('submit_button').addEventListener('click', function(e) {
-	// Clear form
-    document.getElementById('submit_button').reset();	 
-    e.preventDefault();
+	
     var key = {};
     var key_int = localStorage.length + 1;
     key.id = "item" + key_int;
@@ -123,7 +121,9 @@
       }      
       return false;
     };
-	 
+	// Clear form
+    document.getElementById('submit_button').reset();	 
+    e.preventDefault(); 
   });
   document.getElementById('clear_button').addEventListener('click', function(e) {
     e.preventDefault();
