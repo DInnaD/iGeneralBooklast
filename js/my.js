@@ -1,8 +1,8 @@
-/*(function() {*/
+/*(function() {// cherez form ne hoche submityty*/
   let form = document.getElementById('storageForm').addEventListener('submit', function(e) {
-    console.log('it works');
+   /* console.log('it works');
     e.preventDefault();
-  });
+  });*/
    /*
      let form = document.getElementById('storageForm').addEventListener('submit', function(e) {
     console.log('it works');
@@ -14,11 +14,12 @@
     localStorage.removeItem('test');
     console.log(localStorage.getItem('test'));
   */  
-/*
+
     var key = {};
     var key_int = localStorage.length + 1;
     key.id = "item" + key_int;
-    //console.log(key.id);
+    
+      console.log(key.id);
     var itemExists = document.getElementById(key.id);
     if(itemExists !== null) {
       itemExists.remove();
@@ -26,15 +27,16 @@
    
 
     key.name = storageForm.getElementsByClassName('keyName')[0].value;//document.getElementById("keyName").value;
-    //console.log(key.name);
+    
+          console.log(key.name);
     key.value = storageForm.getElementsByClassName('keyValue')[0].value;//document.getElementById("keyValue").value;
      if(!validateForm(keyName, keyValue)){//with getElementById
     return false;
   }
     
-    //console.log(key.value);
+            console.log(key.value);
     var jsonkey = key.value;
-    //console.log(jsonkey);
+            console.log(jsonkey);
 
     // Set to localStorage until 5MB
     try {
@@ -55,9 +57,13 @@
     var listItem = document.createElement("li");
     listItem.setAttribute("id", key.name);
     var item = JSON.parse(localStorage[key.name]);
-    //console.log(item.Id);
-    //console.log(item.Name);
-    //console.log(item.Value);
+    
+    
+    console.log(item.Id);
+    console.log(item.Name);
+    console.log(item.Value);
+    
+    
     var pieces = "Key: " + key.name + ", Value: " + key.value +
     ' <a class="toggler" class="btn btn-danger" href="#">More</a> ' +
     ' <a class="btn btn-default" target="_blank" href="' + url + '">Visit</a> ' +
@@ -71,7 +77,7 @@
      * @name hasClass
      * @desc Function to test for class on an element without jquery
      */
-    /*function hasClass(el, selector) {
+    function hasClass(el, selector) {
       var className = " " + selector + " ";
       if ((" " + el.className + " ").replace(/[\n\t]/g, " ").indexOf(className) > -1) {
         return true;
