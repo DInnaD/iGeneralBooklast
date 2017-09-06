@@ -85,9 +85,10 @@
       itemExists.remove();
     }
     key.name = document.getElementById("keyName").value;
-    //console.log(key.name);
+    console.log(key.name);
     key.value = document.getElementById("keyValue").value;
-    //console.log(key.value);
+    console.log(key.value);
+	 console.log(key);
     var jsonkey = key.value;
     //console.log(jsonkey);
     localStorage[key.name] = JSON.stringify(jsonkey);
