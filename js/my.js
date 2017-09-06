@@ -30,6 +30,9 @@
     
           console.log(key.name);
     key.value = storageForm.getElementsByClassName('keyValue')[0].value;//document.getElementById("keyValue").value;
+         console.log(key);
+         e.preventDefault();
+         });/*
      if(!validateForm(keyName, keyValue)){//with getElementById
     return false;
   }
@@ -37,8 +40,7 @@
             console.log(key.value);
     var jsonkey = key.value;
             console.log(jsonkey);
-e.preventDefault();
-  });/*
+
     // Set to localStorage until 5MB
     try {
     localStorage[key.name] = JSON.stringify(jsonkey);
