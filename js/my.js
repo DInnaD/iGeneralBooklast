@@ -1,4 +1,4 @@
-(function() {
+/*(function() {*/
   let form = document.getElementById('storageForm').addEventListener('submit', function(e) {
     console.log('it works');
     e.preventDefault();
@@ -104,4 +104,6 @@ function validateForm(keyName, keyValue){
   return true;
 }
 */
+/*
 })();
+*/
