@@ -14,7 +14,7 @@
 console.log(key.name);
     key.value = document.getElementById("keyValue").value;
 	  
-	if(!validateForm(keyName, keyValue)){
+	if((!validateForm(keyUrl, keyName)) || (!phonenumber(keyName))){
     return false;
   }	  
 console.log(key.value);
@@ -33,7 +33,7 @@ console.log(key);
 	   // Add to array
     bookmarks.push(key);
     // Set to localStorage
-    localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+    localStorage.setItem('bookmarks', JSON.stringify(bookmarks));//********************************without else edit
   
 	  
 	   //localStorage[key.name] = JSON.stringify(jsonkey);//**************get one
@@ -44,12 +44,12 @@ console.log(key);
    alert('Превышен лимит');
   }
 }	  
-    var nodata = document.getElementById("nodata");
+    /*var nodata = document.getElementById("nodata");
     
     var nodataHidden = hasClass(nodata, 'hidden');
     if(nodataHidden == false) {
       nodata.classList.add("hidden");
-    }
+    }*/
     
     var storageList = document.getElementById("storageList");
     var listItem = document.createElement("li");
@@ -90,8 +90,8 @@ console.log(item.Value);
     nodata.classList.remove("hidden");
   });
 	// Validate Form
-function validateForm(siteUrl, keyName, keyValue){
-  if(!siteUrl || !keyName || !keyValue){
+function validateForm(siteUrl, keyName){
+  if(!siteUrl || !keyName ){
     alert('Please fill in the form');
     return false;
   }
@@ -99,8 +99,8 @@ function validateForm(siteUrl, keyName, keyValue){
   var expression = /[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/gi;
   var regex = new RegExp(expression);
 
-  if(!siteUrl.match(regex)  || !keyValue.match(regex)){
-    alert('Please use a valid data!');
+  if(!siteUrl.match(regex)){
+    alert('Please use a valid URL!');
     return false;
   }
 function phonenumber(keyName) {
