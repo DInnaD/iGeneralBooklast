@@ -40,11 +40,111 @@
 		</div><!-- /container -->
 	</div><!--"black"-->
 	<div class="con" style=" background: #000; position: relative; text-align: center; text-shadow: 1px 1px 2px rgba(0,0,0,0.5); font-family: ; max-width: 100%;">
-		<div class="container">					
+		<div class="container">	
 			<div class="jumbotron">
-				 <!--div id="box" style="display: none; text-align: center; position: relative;"
+  <h1>Local Storage Test</h1>
+</div>
+<div class="container">
+		<div class="col-md-offset-2 col-md-8 col-xs-12">
+		  
+			<form id="storageForm" role="form">
+				<div class="form-group">
+					<label for="keyName"></label>
+					<input type="text" class="form-control" id="keyName" placeholder="Name" />
+				</div>
+				<div class="form-group">
+					<label for="keyValue"></label>
+					<input type="text" class="form-control" id="keyValue" placeholder="Value" />
+				</div>
+				<div class="form-group">
+            <label for="submit" class="sr-only"></label>
+            <input type="submit" class="btn btn-circle" id="submit_button" value="Save" />
+          </div>
+          <div class="form-group">
+            <label for="submit" class="sr-only"></label>
+            <button class="btn btn-danger" id="clear_button" value="Clear">Clear All</button>
+          </div>
+			</form>
+			
+		</div>
+	</div>
+  <br />
+  <br />
+  <hr>
+	<div class="container">
+		<div class="col-md-12">
+			<div class="well bg-danger" id="storageWell">
+				<p class="missing" id="nodata">Add your data here!</p>
+          <ul id="storageList"></ul>
+			</div>
+		</div>
+	</div>
+<style>
 
--->	
+</style>
+<script>/*https://codepen.io/clossmans2/pen/gpxLKm*/
+(function() {
+  document.getElementById('submit_button').addEventListener('click', function(e) {
+    e.preventDefault();
+    var key = {};
+    var key_int = localStorage.length + 1;
+    key.id = "item" + key_int;
+    //console.log(key.id);
+    var itemExists = document.getElementById(key.id);
+    if(itemExists !== null) {
+      itemExists.remove();
+    }
+    key.name = document.getElementById("keyName").value;
+    //console.log(key.name);
+    key.value = document.getElementById("keyValue").value;
+    //console.log(key.value);
+    var jsonkey = key.value;
+    //console.log(jsonkey);
+    localStorage[key.name] = JSON.stringify(jsonkey);
+    var nodata = document.getElementById("nodata");
+    
+    var nodataHidden = hasClass(nodata, 'hidden');
+    if(nodataHidden == false) {
+      nodata.classList.add("hidden");
+    }
+    
+    var storageList = document.getElementById("storageList");
+    var listItem = document.createElement("li");
+    listItem.setAttribute("id", key.name);
+    var item = JSON.parse(localStorage[key.name]);
+    //console.log(item.Id);
+    //console.log(item.Name);
+    //console.log(item.Value);
+    var pieces = "Key: " + key.name + ", Value: " + key.value;
+    var itemNode = document.createTextNode(pieces);
+    listItem.appendChild(itemNode);
+    storageList.appendChild(listItem);
+    
+    /**
+     * @name hasClass
+     * @desc Function to test for class on an element without jquery
+     */
+    function hasClass(el, selector) {
+      var className = " " + selector + " ";
+      if ((" " + el.className + " ").replace(/[\n\t]/g, " ").indexOf(className) > -1) {
+        return true;
+      }      
+      return false;
+    };
+  });
+  document.getElementById('clear_button').addEventListener('click', function(e) {
+    e.preventDefault();
+    localStorage.clear();
+    var storageList = document.getElementById("storageList");
+    while (storageList.firstChild) {
+    storageList.removeChild(storageList.firstChild);
+    }
+    var nodata = document.getElementById("nodata");
+    nodata.classList.remove("hidden");
+  });
+})();
+</script>
+			<!--div class="jumbotron">	
 				<form id="form" name="form">
 					<div class="container" style="color: black; padding: 0px 465px;">
 						<div class="form-group">
@@ -55,9 +155,9 @@
 						</div><button class="btn btn-circle brand" style="float: left; padding-right: 0px;" type="submit">Submit</button>
 					</div>
 				</form>
-				 <!--/div>    id="box" style="display: none; text-align: center; position: relative;"
+				
 
--->	
+	
 				<form id="formEdit" name="formEdit" style="display:none">
 					<div class="container" style="color: black; padding: 0px 400px;">
 						<div class="form-group">
@@ -72,9 +172,8 @@
 					<div class="col-lg-12">
 						<div id="bookmarksResults"></div>
 					</div>
-				</div><!--footer class="footer">
-        <p></p>
-      </footer-->
+				</div-->
+       
 			</div><!-- /container -->
 		</div>
 	</div>
