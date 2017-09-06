@@ -86,7 +86,26 @@ console.log(item.Value);
     };*/
 	  // befor edit
 	  // Clear form
-//document.getElementById('submit_button').reset();	
+//document.getElementById('submit_button').reset();
+	  
+function Search() {
+    var input, a, i, ul, li, filter;
+    input = document.getElementById('search');
+    filter = input.value.toUpperCase();
+    ul = document.getElementById('storageList');
+    li = ul.getElementsByTagName('li');
+
+    for(i=0; i<li.length; i++){
+        a = li[i].getElementsByTagName("a")[0];
+        if(a.innerHTML.toUpperCase().indexOf(filter) > -1){
+            li[i].style.display = "";
+        }
+        else{
+            li[i].style.display = "none";
+        }
+    }
+}
+	  
 	  e.preventDefault();
   });
   document.getElementById('clear_button').addEventListener('click', function(e) {
