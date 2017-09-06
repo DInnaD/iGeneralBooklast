@@ -88,29 +88,25 @@
     //console.log(key.name);
     key.value = document.getElementById("keyValue").value;
     //console.log(key.value);
-	 //console.log(key);
+	 console.log(key);
  	 
 if(!validateForm(keyName, keyValue)){//with getElementById
     return false;
   }	 
-//var jsonkey = key.value;// 
-    var jsonkey = {
-	   id: key.id,
-	   name: key.name,
-	   value: key.value
-    }  
+var jsonkey = key.value;
+     
 	    
     console.log(jsonkey);
 	 
-	/*
+	
     // Local Storage Test
-    localStorage.setItem('test', 'Hello World');
-    console.log(localStorage.getItem('test'));
-    localStorage.removeItem('test');
-    console.log(localStorage.getItem('test'));
-  */  
+    //localStorage.setItem('test', 'Hello World');
+    //console.log(localStorage.getItem('test'));
+   // localStorage.removeItem('test');
+   // console.log(localStorage.getItem('test'));
+ 
 // Set to localStorage until 5MB
-   /* try {	*/ 
+   try {	
       // Test if bookmarks is null
   if(localStorage.getItem('bookmarks') === null){
     // Init array
@@ -120,19 +116,20 @@ if(!validateForm(keyName, keyValue)){//with getElementById
     // Set to localStorage
    // localStorage.setItem('key', JSON.stringify(bookmarks));
   
-	    localStorage[key.name] = JSON.stringify(jsonkey);
+	    localStorage[key.name] = JSON.stringify(key);//jsonkey
+	  
 	  }
-	/*} catch (e) {
+	} catch (e) {
   if (e == QUOTA_EXCEEDED_ERR) {
    alert('Превышен лимит');
   }
-}	*/    
+}	  
     var nodata = document.getElementById("nodata");
     console.log(nodata);
     var nodataHidden = hasClass(nodata, 'hidden');
-    /*if(nodataHidden == false) {
+    if(nodataHidden == false) {
       nodata.classList.add("hidden");
-    }*/
+    }
     
     var storageList = document.getElementById("storageList");
     var listItem = document.createElement("li");
