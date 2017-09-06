@@ -31,7 +31,7 @@
           //console.log(key.name);
     key.value = form.getElementsByClassName('keyValue')[0].value;//
     //key.value = document.getElementById("keyValue").value;
-         //console.log(key);
+         console.log(key);
         // e.preventDefault();
          //});
      if(!validateForm(keyName, keyValue)){//with getElementById
