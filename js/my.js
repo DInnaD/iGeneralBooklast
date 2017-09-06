@@ -74,17 +74,17 @@ console.log(item.Value);
     listItem.appendChild(itemNode);
     storageList.appendChild(listItem);
     
-    /**
+    /*
      * @name hasClass
      * @desc Function to test for class on an element ********************************************edit before .reset() 
      */
-    /*function hasClass(el, selector) {
+    function hasClass(el, selector) {
       var className = " " + selector + " ";
       if ((" " + el.className + " ").replace(/[\n\t]/g, " ").indexOf(className) > -1) {
         return true;
       }      
       return false;
-    };*/
+    };
 	  // befor edit
 	  // Clear form
 //document.getElementById('submit_button').reset();
