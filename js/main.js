@@ -1,33 +1,59 @@
 // Listen for form submit
-document.getElementById('myForm').addEventListener('submit', saveBookmark);
+let form = document.getElementById('form').addEventListener('submit', saveBookmark);
 
 // Save Bookmark
 function saveBookmark(e){
   // Get form values
-  var siteName =document.getElementById('siteName').value;
-  var siteUrl =document.getElementById('siteUrl').value;
-
-  if(!validateForm(siteName, siteUrl)){
+//  var siteName =document.getElementById('siteName').value;
+//  var siteUrl =document.getElementById('siteUrl').value;
+form.getElementsByClassName('name')[0].value;
+form.getElementsByClassName('url')[0].value;
+  
+  if(!validateForm(siteName, siteUrl)){//with getElementById
     return false;
   }
-
-  var bookmark = {
-    name: siteName,
-    url: siteUrl
-  }
-/*function saveBookmark(e){
-  // Get form values
-  var siteName =document.getElementById('siteName').value;
-  var siteUrl =document.getElementById('siteUrl').value;
-
-  if(!validateForm(siteName, siteUrl)){
-    return false;
+//for
+  let bookmark = {
+    name: [],
+    url: []
   }
 
-  var bookmark = {
-    name: siteName,
-    url: siteUrl
-  }*/
+let id = function generatId(){
+
+  bookmark = {
+  bookmark.name = name,
+  bookmark.url = url,
+  bookmark.id = id
+  }
+
+
+  try {
+
+    if(localStorage.['bookmarks'].lenght === 0){ return 1;
+       }else{
+        lastElementIndex = localStorage.lenght - 1;
+         return lastElementIndex + 1;
+       }
+  if (!bookmarks.name || !bookmarks.url) {
+    throw new SyntaxError("Ошибка в данных");
+  }
+
+  blabla(); // произошла непредусмотренная ошибка
+
+  alert( bookmarks.name, bookmarks.url );
+
+} catch (e) {
+
+  if (e.name == "SyntaxError" || e.url == "SyntaxError") {
+    alert( "Извините, в данных ошибка" );
+  } else {
+    throw e;
+  }
+
+}
+
+}// the end of let id = function generatId(){
+
 
   /*
     // Local Storage Test
@@ -43,8 +69,15 @@ function saveBookmark(e){
     var bookmarks = [];
     // Add to array
     bookmarks.push(bookmark);
-    // Set to localStorage
-    localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+    // Set to localStorage until 5MB
+    try {
+   localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+} catch (e) {
+  if (e == QUOTA_EXCEEDED_ERR) {
+   alert('Превышен лимит');
+  }
+}
+   
   } else {
     // Get bookmarks from localStorage
     var bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
@@ -55,7 +88,7 @@ function saveBookmark(e){
   }
 
   // Clear form
-  document.getElementById('myForm').reset();
+  document.getElementById('form').reset();
 
   // Re-fetch bookmarks
   fetchBookmarks();
@@ -63,7 +96,7 @@ function saveBookmark(e){
   // Prevent form from submitting
   e.preventDefault();
 }
-
+/*
 // Delete bookmark
 function deleteBookmark(url){
   // Get bookmarks from localStorage
@@ -75,13 +108,116 @@ function deleteBookmark(url){
       bookmarks.splice(i, 1);
     }
   }
+  */
+// Delete bookmark
+function deleteBookmark(id){
+  // Get bookmarks from localStorage
+  var bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
+  // Loop throught bookmarks
+  for(var i =0;i < bookmarks.length;i++){
+    if(bookmarks[i].id === id){
+      // Remove from array
+      bookmarks.splice(i, 1);
+    }
+  }
   // Re-set back to localStorage
   localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
 
   // Re-fetch bookmarks
   fetchBookmarks();
 }
+// EDIT Bookmark
+function editBookmark(e, id){
+   // Test if bookmarks is null
+  if(localStorage.getItem('bookmarks') === !null){
+    // Init array
+    let bookmarks = [];
+    
+    // Get bookmarks from localStorage
+    let bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
+    
+//del
+// Loop throught bookmarks
+  for(let i =0;i < bookmarks.length;i++){
+    if(bookmarks[i].id === id){
+      // Remove from array
+      bookmarks.splice(i, 1);
+    }
+ // Re-set back to localStorage
+ // localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+   
+  // Get form values
+  form.getElementsByClassName('name')[0].value;
+form.getElementsByClassName('url')[0].value;
+  
+  if(!validateForm(siteName, siteUrl)){//with getElementById
+    return false;
+  }
+//for
+  let bookmark = {
+    name1: [],
+    url1: []
+  }
 
+let id = function generatId(){
+
+  bookmark = {
+  bookmark.name1 = name,
+  bookmark.url1 = url,
+  bookmark.id = id
+  }
+
+
+  try {
+
+    if(localStorage.['bookmarks'].lenght === 0){ return 1;
+       }else{
+        lastElementIndex = localStorage.lenght - 1;
+         return lastElementIndex + 1;
+       }
+  if (!bookmarks.name || !bookmarks.url) {
+    throw new SyntaxError("Ошибка в данных");
+  }
+
+  blabla(); // произошла непредусмотренная ошибка
+
+  alert( bookmarks.name, bookmarks.url );
+
+} catch (e) {
+
+  if (e.name == "SyntaxError" || e.url == "SyntaxError") {
+    alert( "Извините, в данных ошибка" );
+  } else {
+    throw e;
+  }
+
+}
+
+}// the end of let id = function generatId(){
+
+/* 
+    // Local Storage Test
+    localStorage.setItem('test', 'Hello World');
+    console.log(localStorage.getItem('test'));
+    localStorage.removeItem('test');
+    console.log(localStorage.getItem('test'));
+  */
+ // Add bookmark to array
+    bookmarks.push(bookmark);
+     // Re-set back to localStorage
+    localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+ 
+  
+  }
+  
+  
+  // Clear form
+  document.getElementById('myForm').reset();
+  // Re-fetch bookmarks
+  fetchBookmarks();
+  // Prevent form from submitting
+  e.preventDefault();
+}
 // Fetch bookmarks
 function fetchBookmarks(){
   // Get bookmarks from localStorage
@@ -95,8 +231,14 @@ function fetchBookmarks(){
     var name = bookmarks[i].name;
     var url = bookmarks[i].url;
 
-    bookmarksResults.innerHTML += '<div class="well">' + '<div class="toggle">' + '<h3>' + name + '</h3>' + '<div class="content">' + '<h3>' + url + '</h3>' + '</div>' + ' <a class="toggler" href="#">More</a> ' + '<h3>' + ' <a class="btn btn-default" target="_blank" href="'+url+'">Visit</a> ' + ' <a onclick="EditBookmark(\''+url+'\')" class="btn btn-danger" href="#">Edit</a> ' + ' <a onclick="deleteBookmark(\''+url+'\')" class="btn btn-danger" href="#">Delete</a> ' +
- '</h3>' + '</div>' + '</div>';
+    bookmarksResults.innerHTML += '<div class="well">' +
+    '<h3>' + name + '<div class="toggle">' + '<div class="content">' + url + '</div>' +
+    ' <a class="toggler" class="btn btn-danger" href="#">More</a> ' + '</div>' +
+    ' <a class="btn btn-default" target="_blank" href="' + url + '">Visit</a> ' +
+    ' <a bookmarksResults.addEventListener("click", editBookmark(id)) class="btn btn-danger" href="#">Edite</a> ' +
+    ' <a bookmarksResults.addEventListener("click", deleteBookmark(id)) class="btn btn-danger">Delete</a> ' +
+    '</h3>' +
+    '</div>';
   }
 }
 function search() {
@@ -115,7 +257,7 @@ function search() {
         }
     }
 }
-/*function getOne() {
+/*function getAll() {
     for (var i = 0; i < localStorage.length; i++) {
         var key = localStorage.key(i);
         var div = document.createElement("div");
