@@ -16,8 +16,31 @@
     console.log(key.value);
     var jsonkey = key.value;
     console.log(jsonkey);
-	  console.log(key);
-    localStorage[key.name] = JSON.stringify(jsonkey);
+console.log(key);	  
+    //localStorage[key.name] = JSON.stringify(jsonkey);
+	  // Set to localStorage until 5MB
+   try {	
+      // Test if bookmarks is null
+  if(localStorage.getItem('bookmarks') === null){
+    // Init array
+    var bookmarks = [];
+    // Add to array
+    //bookmarks.push(key.name);
+	   // Add to array
+    bookmarks.push(key);
+    // Set to localStorage
+    localStorage.setItem('key', JSON.stringify(bookmarks));
+  
+	   /* localStorage[key.name] = JSON.stringify(key);
+	   localStorage[key.name] = JSON.stringify(jsonkey);
+	    localStorage[bookmarks] = JSON.stringify(key);//jsonkey key.name
+	  */
+	  }
+	} catch (e) {
+  if (e == QUOTA_EXCEEDED_ERR) {
+   alert('Превышен лимит');
+  }
+}	  
     var nodata = document.getElementById("nodata");
     
     var nodataHidden = hasClass(nodata, 'hidden');
