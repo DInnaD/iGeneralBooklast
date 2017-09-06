@@ -90,6 +90,9 @@
     //console.log(key.value);
 	 //console.log(key);
  	 
+if(!validateForm(keyName, keyValue)){//with getElementById
+    return false;
+  }	 
 	//key.value;// 
     var jsonkey = {
 	    key.id: [],
@@ -99,9 +102,6 @@
 	    
     console.log(jsonkey);
 	 
-if(!validateForm(keyName, keyValue)){//with getElementById
-    return false;
-  }	 
 	/*
     // Local Storage Test
     localStorage.setItem('test', 'Hello World');
