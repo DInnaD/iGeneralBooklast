@@ -22,7 +22,7 @@ console.log(key.value);
 console.log(key);	  
     //localStorage[key.name] = JSON.stringify(jsonkey);
 	  // Set to localStorage until 5MB
-   //try {	
+   try {	
       // Test if bookmarks is null
   if(localStorage.getItem('bookmarks') === null){
     // Init array
