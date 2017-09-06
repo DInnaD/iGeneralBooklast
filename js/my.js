@@ -19,7 +19,7 @@
     var key_int = localStorage.length + 1;
     key.id = "item" + key_int;
     
-      //console.log(key.id);
+      //console.log(key.id);+++++++++++++++++++++++++item10
     var itemExists = document.getElementById(key.id);
     if(itemExists !== null) {
       itemExists.remove();
@@ -27,8 +27,8 @@
    
 
     key.name = form.getElementsByClassName('keyName')[0].value;//document.getElementById("keyName").value;
-    
-          console.log(key.name);
+          console.log(keyName);
+          //console.log(key.name);
     key.value = form.getElementsByClassName('keyValue')[0].value;//document.getElementById("keyValue").value;
          console.log(key);
          e.preventDefault();
