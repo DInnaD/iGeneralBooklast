@@ -1,88 +1,534 @@
-/* Space out content a bit 
-body {
-  padding-top: 20px;
-  padding-bottom: 20px;
-}*/
-
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
-  padding-right: 15px;
-  padding-left: 15px;
-}
-
-/* Custom page header */
-.header {
-  padding-bottom: 20px;
-  border-bottom: 1px solid #e5e5e5;
-}
-/* Make the masthead heading the same height as the navigation */
-.header h3 {
-  margin-top: 0;
-  margin-bottom: 0;
-  line-height: 40px;
-}
-
-/* Custom page footer */
-.footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
-}
-
-/* Customize container */
-@media (min-width: 768px) {
-  .container {
-    max-width: 100%;
-  }
-}
-.container-narrow > hr {
-  margin: 30px 0;
-}
-
-/* Main marketing message and sign up button */
-
-.jumbotron {
-    text-align: center;
-    border-bottom: 1px solid #e5e5e5;
-    background: #000;
-}
-.jumbotron .btn {
-  padding: 14px 24px;
-  font-size: 21px;
-}
-
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
-}
-.marketing p + h4 {
-  margin-top: 28px;
-}
-
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
-    padding-right: 0;
-    padding-left: 0;
-  }
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-  }
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
-  }
-}
-@media screen and (min-width: 768px)
-bootstrap.min.css:5
+ html, body {
+ 	width: 100% !important;
+ 	/*height: 100% !important;*/
+ 	margin: 0;
+ 	padding: 0;
+ }
+ body {
+ 	font-family: sans-serif;
+ 	background-image: -moz-linear-gradient(30deg, $start 0%, $end 100%);
+ 	background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, $start), color-stop(100%, $end));
+ 	background: -webkit-linear-gradient(30deg, $start 0%, $end 100%);
+ 	background: -o-linear-gradient(30deg, $start 0%, $end 100%);
+ 	background: -ms-linear-gradient(30deg, $start 0%, $end 100%);
+ 	background: linear-gradient(30deg, $start 0%, $end 100%);
+ }
+ .marketing, .footer {
+ 	padding-right: 15px;
+ 	padding-left: 15px;
+ }
+ /* Custom page header */
+ 
+ .header {
+ 	padding-bottom: 20px;
+ 	border-bottom: 1px solid #e5e5e5;
+ }
+ /* Custom page footer */
+ 
+ .footer {
+ 	padding-top: 19px;
+ 	color: #777;
+ 	border-top: 1px solid #e5e5e5;
+ }
+ .container-narrow>hr {
+ 	margin: 30px 0;
+ }
+ /* Main marketing message and sign up button */
+ 
+ .jumbotron {
+ 	text-align: center;
+ 	border-bottom: 1px solid #e5e5e5;
+ 	background: #000;
+ }
+ .jumbotron .btn {
+ 	padding: 14px 24px;
+ 	font-size: 21px;
+ }
+ /* Supporting marketing content */
+ 
+ .marketing {
+ 	margin: 40px 0;
+ }
+ .marketing p+h4 {
+ 	margin-top: 28px;
+ }
+ form {
+ 	display: block;
+ 	margin-top: 0em;
+ }
+ #search {
+ 	font-size: 18px;
+ 	font-family: "Arial";
+ 	border: 1px;
+ 	solid-color: red;
+ 	padding: 5px;
+ }
+ .bookmarksResults {
+ 	list-style: none;
+ }
+ #bookmarksResults li a {
+ 	margin-top: -1px;
+ 	padding: 12px;
+ 	text-decoration: none;
+ 	font-size: 18px;
+ 	display: block;
+ }
+ #bookmarksResults li a:hover {
+ 	background-color: white;
+ }
+ form {
+ 	display: block;
+ 	margin-top: 0em;
+ }
+ #search {
+ 	font-size: 18px;
+ 	font-family: "Arial";
+ 	border: 1px;
+ 	solid-color: red;
+ 	padding: 5px;
+ }
+ .bookmarksResults {
+ 	list-style: none;
+ }
+ #bookmarksResults li a {
+ 	margin-top: -1px;
+ 	padding: 12px;
+ 	text-decoration: none;
+ 	font-size: 18px;
+ 	display: block;
+ }
+ #bookmarksResults li a:hover {
+ 	background-color: white;
+ }
+ .marketing, {
+ 	padding-right: 15px;
+ 	padding-left: 15px;
+ }
+ .container-narrow>hr {
+ 	margin: 30px 0;
+ }
+ /* Main marketing message and sign up button */
+ 
+ .jumbotron {
+ 	text-align: center;
+ 	border-bottom: 1px solid #e5e5e5;
+ }
+ .jumbotron .btn {
+ 	padding: 14px 24px;
+ 	font-size: 21px;
+ }
 .container .jumbotron, .container-fluid .jumbotron {
-  padding: 0 !important;
-    /* padding-right: 60px; */
-    /* padding-left: 60px; */
-}
+ 	padding: 0 !important;
+ }
+ /* Supporting marketing content */
+ 
+ .marketing {
+ 	margin: 40px 0;
+ }
+ .marketing p+h4 {
+ 	margin-top: 28px;
+ }
+ .toggle {
+ 	position: relative;
+ 	/* background: rgb(250,250,250); */
+ 	padding: 1em;
+ 	width: 92.5%;
+ 	margin: auto;
+ 	max-width: 30em;
+ 	height: 92.5%;
+ }
+ .toggle .content {
+ 	position: relative;
+ 	padding-top: 5px;
+ 	text-align: left;
+ 	border: 1px solid #ccc;
+ 	background: #eee;
+ }
+ .toggle .toggler {
+ 	position: relative;
+ 	font-size: 11px;
+ }
+ div a {
+ 	text-decoration: none;
+ 	color: white;
+ 	font-size: 20px;
+ 	padding: 15px;
+ 	display: inline-block;
+ }
+ ul {
+ 	display: inline;
+ 	margin: 0;
+ 	padding: 0;
+ }
+ ul li {
+ 	display: inline-block;
+ }
+ ul li:hover {
+ 	background: #555;
+ }
+ ul li:hover ul {
+ 	display: block;
+ }
+ ul li ul {
+ 	position: absolute;
+ 	width: 100%;
+ 	display: none;
+ }
+ ul li ul li {
+ 	background: #555;
+ 	display: block;
+ }
+ ul li ul li a {
+ 	display: block !important;
+ }
+ ul li ul li:hover {
+ 	background: #666;
+ }
+ #contactform {
+ 	position: relative;
+ 	z-index: 1;
+ 	/* The z-index should be higher than Google Maps */
+ 	width: auto;
+ 	margin: 90px auto 0;
+ 	padding: 10px;
+ 	background: black;
+ 	height: auto;
+ 	opacity: .60;
+ 	/* Set the opacity for a slightly transparent Google Form */
+ 	text-align: center;
+ 	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+ 	font-family: "Josefin Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
+ 	font-size: 2.5em;
+ 	font-weight: 700;
+ 	line-height: normal;
+ 	color: #fff;
+ }
+ #mymap {
+ 	width: 100%;
+ 	height: 100%;
+ 	position: absolute;
+ 	margin: 0;
+ 	padding: 0;
+ 	top: 0;
+ 	left: 0;
+ 	bottom: 0;
+ 	right: 0;
+ 	z-index: 0;
+ }
+ h1 {
+ 	font-size: 1.2em;
+ 	text-align: center;
+ }
+ input {
+ 	width: 100%;
+ 	box-sizing: border-box;
+ 	font-size: 1em;
+ 	margin-top: 0.5em;
+ 	padding: 0.5em;
+ }
+ input:focus {
+ 	outline: none;
+ 	text-decoration: none;
+ 	color: #1d9b6c;
+ 	cursor: pointer;
+ }
+ input::after {
+ 	width: 100%;
+ 	height: 10px;
+ 	background: red;
+ }
+ #navigation {
+ 	position: relative;
+ 	padding: 10px;
+ }
+ .nav-list {
+ 	width: 92.5%;
+ 	max-width: 50em;
+ 	text-align: center;
+ 	padding: 0;
+ 	margin: auto;
+ }
+ .nav-list li {
+ 	list-style: none;
+ 	display: inline-block;
+ 	background: rgba(256, 256, 256, 0.5);
+ 	padding: 0.7em;
+ 	margin: 0 0.5em;
+ 	border: 2px solid white;
+ 	border-radius: 100% !important;
+ 	color: #ff5833;
+ 	-webkit-transition: background 0.3s ease-in-out;
+ 	-moz-transition: background 0.3s ease-in-out;
+ 	transition: background 0.3s ease-in-out;
+ }
+ li.active {
+ 	background-color: rgba(256, 256, 256, 0.95);
+ }
+ .nav-list li:hover, .nav-list li:focus {
+ 	text-decoration: none;
+ 	color: #1D9B8E;
+ 	cursor: pointer;
+ }
+ .panel i.animated {
+ 	-webkit-transition-property: -webkit-transform;
+ 	-webkit-transition-duration: 1s;
+ 	-moz-transition-property: -moz-transform;
+ 	-moz-transition-duration: 1s;
+ }
+ .panel:hover i.animated {
+ 	-webkit-animation-name: pulse;
+ 	-moz-animation-name: pulse;
+ 	-webkit-animation-duration: 1.5s;
+ 	-moz-animation-duration: 1.5s;
+ 	-webkit-animation-iteration-count: infinite;
+ 	-moz-animation-iteration-count: infinite;
+ 	-webkit-animation-timing-function: linear;
+ 	-moz-animation-timing-function: linear;
+ }
+ /*3VAR*/
+ 
+ .panel {
+ 	position: relative;
+ 	background: rgb(250, 250, 250);
+ 	padding: 1em;
+ 	width: 92.5%;
+ 	margin: auto;
+ 	max-width: 30em;
+ 	height: 92.5%;
+ }
+ input[type=text] {
+ 	width: 130px;
+ 	box-sizing: border-box;
+ 	border: 2px solid #ccc;
+ 	border-radius: 0;
+ 	font-size: 16px;
+ 	background-color: white;
+ 	background-image: url('searchicon.png');
+ 	background-position: 10px 10px;
+ 	background-repeat: no-repeat;
+ 	padding: 19px 10px 2px 50px;
+ 	-webkit-transition: width 0.4s ease-in-out;
+ 	transition: width 0.4s ease-in-out;
+ }
+ input[type=text]:focus {
+ 	width: 100%;
+ }
+ h2, h3, h4, h5, h6 {
+ 	margin-top: 1em;
+ 	margin-bottom: 0.6em;
+ 	font-size: 3.4em;
+ 	font-weight: 300;
+ }
+ p {
+ 	font-size: 1.8em;
+ }
+ img {
+ 	max-width: 100%;
+ 	height: auto;
+ }
+ a {
+ 	color: #42DCA3;
+ 	-webkit-transition: all 0.2s ease-in-out;
+ 	-moz-transition: all 0.2s ease-in-out;
+ 	transition: all 0.2s ease-in-out;
+ }
+ .intro {
+ 	display: table;
+ 	width: 100%;
+ 	height: auto;
+ 	padding: 100px 0;
+ 	text-align: center;
+ 	color: white;
+ 	background: url(../img/) no-repeat bottom center scroll;
+ 	background-color: black;
+ 	-webkit-background-size: cover;
+ 	-moz-background-size: cover;
+ 	background-size: cover;
+ 	-o-background-size: cover;
+ }
+ .intro .intro-body {
+ 	display: table-cell;
+ 	vertical-align: middle;
+ }
+ .intro .intro-body .brand-heading {
+ 	font-size: 40px;
+ }
+ .intro .intro-body .intro-text {
+ 	font-size: 18px;
+ }
+ .btn-circle {
+ 	width: 42px;
+ 	height: 42px;
+ 	margin-top: 15px;
+ 	padding: 7px 16px;
+ 	border: 2px solid white;
+ 	border-radius: 100% !important;
+ 	font-size: 25px;
+ 	color: white;
+ 	background: transparent;
+ 	-webkit-transition: background 0.3s ease-in-out;
+ 	-moz-transition: background 0.3s ease-in-out;
+ 	transition: background 0.3s ease-in-out;
+ }
+ .btn {
+ 	text-transform: uppercase;
+ 	font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+ 	font-weight: 400;
+ }
+ .btn-circle i.animated {
+ 	-webkit-transition-property: -webkit-transform;
+ 	-webkit-transition-duration: 1s;
+ 	-moz-transition-property: -moz-transform;
+ 	-moz-transition-duration: 1s;
+ }
+ .btn-circle:hover i.animated {
+ 	-webkit-animation-name: pulse;
+ 	-moz-animation-name: pulse;
+ 	-webkit-animation-duration: 1.5s;
+ 	-moz-animation-duration: 1.5s;
+ 	-webkit-animation-iteration-count: infinite;
+ 	-moz-animation-iteration-count: infinite;
+ 	-webkit-animation-timing-function: linear;
+ 	-moz-animation-timing-function: linear;
+ }
+ .btn {
+ 	text-transform: uppercase;
+ 	font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+ 	font-weight: 600;
+ 	-webkit-transition: all 0.3s ease-in-out;
+ 	-moz-transition: all 0.3s ease-in-out;
+ 	transition: all 0.3s ease-in-out;
+ 	border-radius: 0;
+ }
+ .btn-default {
+ 	border: 1px solid #42DCA3;
+ 	color: #42DCA3;
+ 	background-color: transparent;
+ }
+ .btn-default:hover, .btn-default:focus {
+ 	border: 1px solid #42DCA3;
+ 	outline: none;
+ 	color: black;
+ 	background-color: #42DCA3;
+ }
+ .toggle {
+ 	position: relative;
+ 	/* background: rgb(250,250,250); */
+ 	padding: 1em;
+ 	width: 92.5%;
+ 	margin: auto;
+ 	max-width: 30em;
+ 	height: 92.5%;
+ }
+ .toggle .content {
+ 	position: relative;
+ 	padding-top: 5px;
+ 	text-align: left;
+ 	border: 1px solid #ccc;
+ 	background: #eee;
+ }
+ .toggle .toggler {
+ 	position: relative;
+ 	font-size: 11px;
+ }
+ /*media*/
+ /* Customize container */
+ 
+ @media (min-width: 768px) {
+ 	.container {
+ 		max-width: 100%;
+ 	}
+ }
+ @media (min-width: 767px) {
+ 	#mymap {
+ 		width: 100%;
+ 		height: 100%;
+ 	}
+ 	.nav-list li {
+ 		list-style: none;
+ 		display: inline-block;
+ 		background: rgba(256, 256, 256, 0.5);
+ 		padding: 0.7em;
+ 		margin: 0 0.9em;
+ 		border: 4px solid white;
+ 	}
+ }
+ @media (min-width: 768px) {
+ 	.intro {
+ 		height: 100%;
+ 		padding: 0;
+ 	}
+ 	.intro .intro-body .brand-heading {
+ 		font-size: 100px;
+ 	}
+ 	.intro .intro-body .intro-text {
+ 		font-size: 26px;
+ 	}
+ 	.btn-circle {
+ 		width: 70px;
+ 		height: 70px;
+ 		margin-top: 15px;
+ 		padding: 7px 16px;
+ 		border: 2px solid white;
+ 		border-radius: 100% !important;
+ 		font-size: 40px;
+ 		color: white;
+ 		background: transparent;
+ 		-webkit-transition: background 0.3s ease-in-out;
+ 		-moz-transition: background 0.3s ease-in-out;
+ 		transition: background 0.3s ease-in-out;
+ 	}
+ 	.btn-circle:hover, .btn-circle:focus {
+ 		outline: none;
+ 		color: white;
+ 		background: rgba(255, 255, 255, 0.1);
+ 	}
+ }
+ @media only screen and (max-width: 360px) {
+ 	h1 {
+ 		font-size: 3em;
+ 	}
+ 	p {
+ 		font-size: 0.6em;
+ 	}
+ }
+ @media \0screen {
+ 	img {
+ 		width: auto;
+ 		/* for ie 8 */
+ 	}
+ }
+ /* Responsive: Portrait tablets and up */
+ 
+ @media screen and (min-width: 768px) {
+ 	/* Remove the padding we set earlier */
+ 	.marketing, .footer {
+ 		padding-right: 0;
+ 		padding-left: 0;
+ 	}
+ 	/* Remove the bottom border on the jumbotron for visual effect */
+ 	.jumbotron {
+ 		border-bottom: 0;
+ 	}
+ }
+ @media screen and (min-width: 768px) bootstrap.min.css:5 
+ /* Customize container */
+ 
+ @media (min-width: 768px) {
+ 	.container {
+ 		max-width: 100%;
+ 	}
+ }
+ /* Responsive: Portrait tablets and up */
+ 
+ @media screen and (min-width: 768px) {
+ 	/* Remove the padding we set earlier */
+ 	.marketing, .footer {
+ 		padding-right: 0;
+ 		padding-left: 0;
+ 	}
+ 	/* Remove the bottom border on the jumbotron for visual effect */
+ 	.jumbotron {
+ 		border-bottom: 0;
+ 	}
+ }
