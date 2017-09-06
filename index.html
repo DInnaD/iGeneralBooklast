@@ -89,12 +89,15 @@
     key.value = document.getElementById("keyValue").value;
     //console.log(key.value);
 	 //console.log(key);
- if(!validateForm(keyName, keyValue)){//with getElementById
+ 	 
+	 
+    var jsonkey = [];
+	jsonkey =  key;//key.value;
+    console.log(jsonkey);
+	 
+if(!validateForm(keyName, keyValue)){//with getElementById
     return false;
   }	 
-	 
-    var jsonkey = key;//key.value;
-    console.log(jsonkey);
 	/*
     // Local Storage Test
     localStorage.setItem('test', 'Hello World');
