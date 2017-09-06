@@ -28,7 +28,7 @@ console.log(key);
 	   // Add to array
     bookmarks.push(key);
     // Set to localStorage
-    localStorage.setItem('key', JSON.stringify(bookmarks));
+    localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
   
 	   /* localStorage[key.name] = JSON.stringify(key);
 	   localStorage[key.name] = JSON.stringify(jsonkey);
