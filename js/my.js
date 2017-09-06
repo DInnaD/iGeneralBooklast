@@ -16,6 +16,7 @@
     console.log(key.value);
     var jsonkey = key.value;
     console.log(jsonkey);
+	  console.log(key);
     localStorage[key.name] = JSON.stringify(jsonkey);
     var nodata = document.getElementById("nodata");
     
