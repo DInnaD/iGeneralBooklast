@@ -1,8 +1,8 @@
 (function() {
-  document.getElementById('submit_button').addEventListener('click', function(e) {
+  let form = document.getElementById('storageForm').addEventListener('submit', function(e) {
     e.preventDefault();
 
-
+    
 
     var key = {};
     var key_int = localStorage.length + 1;
@@ -12,7 +12,7 @@
     if(itemExists !== null) {
       itemExists.remove();
     }
-   let form = document.getElementById('storageForm');
+   
 
     key.name = storageForm.getElementsByClassName('keyName')[0].value;//document.getElementById("keyName").value;
     //console.log(key.name);
