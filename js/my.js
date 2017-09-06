@@ -48,14 +48,37 @@ console.log(key);
 	  
   // Clear form
   document.getElementById('submit_button').reset();
-
+// Re-fetch bookmarks
+  fetchBookmarks();
 	} catch (e) {
   if (e == QUOTA_EXCEEDED_ERR) {
    alert('Превышен лимит');
   }
 }  
+	
+  e.preventDefault();
+  });	
+// Delete bookmark
+function deleteBookmark(id){
+  // Get bookmarks from localStorage
+  var bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
+  // Loop throught bookmarks
+  for(var i =0;i < bookmarks.length;i++){
+    if(bookmarks[i].key.id === id){
+      // Remove from array
+      bookmarks.splice(i, 1);
+    }
+  }
+  // Re-set back to localStorage
+  localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+
+  // Re-fetch bookmarks
+  fetchBookmarks();
+}
+
+function fetchBookmarks(hasClass, id){
     var nodata = document.getElementById("nodata");
-    
+  
     var nodataHidden = hasClass(nodata, 'hidden');
     if(nodataHidden == false) {
       nodata.classList.add("hidden");
@@ -68,11 +91,11 @@ console.log(key);
 console.log(item.Id);
 console.log(item.Name);
 console.log(item.Value);
-    var pieces = "Key: " + key.name + ", Value: " + key.value;
+    var pieces = "Key: " + key.name + ", Value: " + key.value + ' <a class="toggler" class="btn btn-danger" href="#">More</a> ' + ' <a class="btn btn-default" target="_blank" href="' + url + '">Visit</a> ' + ' <a storageWell.addEventListener("click", editBookmark(key.id)) class="btn btn-danger" href="#">Edite</a> ' + ' <a storageWell.addEventListener("click", deleteBookmark(key.id)) class="btn btn-danger">Delete</a> ';
     var itemNode = document.createTextNode(pieces);
     listItem.appendChild(itemNode);
     storageList.appendChild(listItem);
-    
+} 
     /*
      * @name hasClass
      * @desc Function to test for class on an element ********************************************edit before .reset() 
@@ -106,8 +129,7 @@ function Search() {
     }
 }
 	  
-	  e.preventDefault();
-  });
+	
   document.getElementById('clear_button').addEventListener('click', function(e) {
     e.preventDefault();
     localStorage.clear();
