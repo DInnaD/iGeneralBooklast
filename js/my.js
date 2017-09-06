@@ -23,7 +23,7 @@ console.log(key.value);
 console.log(key);	  
     //localStorage[key.name] = JSON.stringify(jsonkey);
 	  // Set to localStorage until 5MB
-   try {	
+   //try {	
       // Test if bookmarks is null
   if(localStorage.getItem('bookmarks') === null){
     // Init array
@@ -46,14 +46,15 @@ console.log(key);
     // Re-set back to localStorage
     localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
   }
-
+	  
   // Clear form
   document.getElementById('submit_button').reset();
+/*
 	} catch (e) {
   if (e == QUOTA_EXCEEDED_ERR) {
    alert('Превышен лимит');
   }
-}	  
+}*/	  
     /*var nodata = document.getElementById("nodata");
     
     var nodataHidden = hasClass(nodata, 'hidden');
