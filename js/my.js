@@ -19,7 +19,7 @@
     var key_int = localStorage.length + 1;
     key.id = "item" + key_int;
     
-      console.log(key.id);
+      //console.log(key.id);
     var itemExists = document.getElementById(key.id);
     if(itemExists !== null) {
       itemExists.remove();
