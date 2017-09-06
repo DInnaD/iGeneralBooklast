@@ -49,8 +49,8 @@
     var pieces = "Key: " + key.name + ", Value: " + key.value +
     ' <a class="toggler" class="btn btn-danger" href="#">More</a> ' +
     ' <a class="btn btn-default" target="_blank" href="' + url + '">Visit</a> ' +
-    ' <a bookmarksResults.addEventListener("click", editBookmark(key.id)) class="btn btn-danger" href="#">Edite</a> ' +
-    ' <a bookmarksResults.addEventListener("click", deleteBookmark(key.id)) class="btn btn-danger">Delete</a> ';
+    ' <a storageWell.addEventListener("click", editBookmark(key.id)) class="btn btn-danger" href="#">Edite</a> ' +
+    ' <a storageWell.addEventListener("click", deleteBookmark(key.id)) class="btn btn-danger">Delete</a> ';
     var itemNode = document.createTextNode(pieces);
     listItem.appendChild(itemNode);
     storageList.appendChild(listItem);
