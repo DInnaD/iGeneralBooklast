@@ -38,14 +38,14 @@ console.log(key);
 	  
 	   //localStorage[key.name] = JSON.stringify(jsonkey);//**************get one
 	    
-	  }/*else{
+	  }else{
     // Get bookmarks from localStorage
     var bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
     // Add bookmark to array
     bookmarks.push(key);
     // Re-set back to localStorage
     localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
-  }*/
+  }
 	  
   // Clear form
   document.getElementById('submit_button').reset();
