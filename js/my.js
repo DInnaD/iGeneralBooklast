@@ -1,9 +1,20 @@
 (function() {
   let form = document.getElementById('storageForm').addEventListener('submit', function(e) {
+    console.log('it works');
     e.preventDefault();
-
-    
-
+  }
+   /*
+     let form = document.getElementById('storageForm').addEventListener('submit', function(e) {
+    console.log('it works');
+    e.preventDefault();
+  }
+    // Local Storage Test
+    localStorage.setItem('test', 'Hello World');
+    console.log(localStorage.getItem('test'));
+    localStorage.removeItem('test');
+    console.log(localStorage.getItem('test'));
+  */  
+/*
     var key = {};
     var key_int = localStorage.length + 1;
     key.id = "item" + key_int;
@@ -20,8 +31,9 @@
      if(!validateForm(keyName, keyValue)){//with getElementById
     return false;
   }
+    
     //console.log(key.value);
-    var jsonkey = key.value;//***************************************************key.value***********item9**key.id
+    var jsonkey = key.value;
     //console.log(jsonkey);
 
     // Set to localStorage until 5MB
@@ -59,7 +71,7 @@
      * @name hasClass
      * @desc Function to test for class on an element without jquery
      */
-    function hasClass(el, selector) {
+    /*function hasClass(el, selector) {
       var className = " " + selector + " ";
       if ((" " + el.className + " ").replace(/[\n\t]/g, " ").indexOf(className) > -1) {
         return true;
@@ -91,4 +103,5 @@ function validateForm(keyName, keyValue){
 
   return true;
 }
+*/
 })();
