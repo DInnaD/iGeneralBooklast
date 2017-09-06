@@ -3,7 +3,8 @@
 1. views: https://dinnad.github.io/igeneralbook/ 
 2. repository https://github.com/DInnaD/iGeneralBooklast/ 
 3. index.html https://github.com/DInnaD/iGeneralBooklast/blob/master/index.html
-4. main.js https://github.com/DInnaD/iGeneralBooklast/blob/master/js/main,js
+4. main.js https://github.com/DInnaD/iGeneralBooklast/blob/master/js/main.js
+5. in the middle of the subject: my.js https://github.com/DInnaD/iGeneralBooklast/blob/master/js/my.js
 
 Description:
 
