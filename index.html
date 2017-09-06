@@ -73,8 +73,9 @@
 
 
 <script>
+
 (function() {
-	document.getElementById('submit_button').addEventListener('click', function(e) {
+  document.getElementById('submit_button').addEventListener('click', function(e) {
     e.preventDefault();
     var key = {};
     var key_int = localStorage.length + 1;
@@ -89,8 +90,50 @@
     key.value = document.getElementById("keyValue").value;
     //console.log(key.value);
     var jsonkey = key.value;
-    console.log(jsonkey);
-		console.log(key);
+    //console.log(jsonkey);
+    localStorage[key.name] = JSON.stringify(jsonkey);
+    var nodata = document.getElementById("nodata");
+    
+    var nodataHidden = hasClass(nodata, 'hidden');
+    if(nodataHidden == false) {
+      nodata.classList.add("hidden");
+    }
+    
+    var storageList = document.getElementById("storageList");
+    var listItem = document.createElement("li");
+    listItem.setAttribute("id", key.name);
+    var item = JSON.parse(localStorage[key.name]);
+    //console.log(item.Id);
+    //console.log(item.Name);
+    //console.log(item.Value);
+    var pieces = "Key: " + key.name + ", Value: " + key.value;
+    var itemNode = document.createTextNode(pieces);
+    listItem.appendChild(itemNode);
+    storageList.appendChild(listItem);
+    
+    /**
+     * @name hasClass
+     * @desc Function to test for class on an element without jquery
+     */
+    function hasClass(el, selector) {
+      var className = " " + selector + " ";
+      if ((" " + el.className + " ").replace(/[\n\t]/g, " ").indexOf(className) > -1) {
+        return true;
+      }      
+      return false;
+    };
+  });
+  document.getElementById('clear_button').addEventListener('click', function(e) {
+    e.preventDefault();
+    localStorage.clear();
+    var storageList = document.getElementById("storageList");
+    while (storageList.firstChild) {
+    storageList.removeChild(storageList.firstChild);
+    }
+    var nodata = document.getElementById("nodata");
+    nodata.classList.remove("hidden");
+  });
+})();	
  /*document.getElementById('submit_button').addEventListener('click', function(e) {
 	
     var key = {};
@@ -106,14 +149,14 @@
     key.value = document.getElementById("keyValue").value;
     //console.log(key.value);
 	 console.log(key);
- 	*/ 
+ 	
 if(!validateForm(keyName, keyValue)){//with getElementById
     return false;
   }	 
 var jsonkey = key.value;
      
 	    
-    console.log(jsonkey);*/
+    console.log(jsonkey);
 	 
 	
     // Local Storage Test
@@ -172,7 +215,7 @@ var jsonkey = key.value;
      * @name hasClass
      * @desc Function to test for class on an element without jquery
      */
-    function hasClass(el, selector) {
+    /*function hasClass(el, selector) {
       var className = " " + selector + " ";
       if ((" " + el.className + " ").replace(/[\n\t]/g, " ").indexOf(className) > -1) {
         return true;
@@ -194,7 +237,7 @@ var jsonkey = key.value;
     nodata.classList.remove("hidden");
   });
 	  
-})();
+})();*/
 </script>
 			<!--div class="jumbotron">	
 				<form id="form" name="form">
