@@ -80,17 +80,17 @@
     var key = {};
     var key_int = localStorage.length + 1;
     key.id = "item" + key_int;
-    //console.log(key.id);
+    console.log(key.id);
     var itemExists = document.getElementById(key.id);
     if(itemExists !== null) {
       itemExists.remove();
     }
     key.name = document.getElementById("keyName").value;
-    //console.log(key.name);
+    console.log(key.name);
     key.value = document.getElementById("keyValue").value;
-    //console.log(key.value);
+    console.log(key.value);
     var jsonkey = key.value;
-    //console.log(jsonkey);
+    console.log(jsonkey);
     localStorage[key.name] = JSON.stringify(jsonkey);
     var nodata = document.getElementById("nodata");
     
@@ -103,9 +103,9 @@
     var listItem = document.createElement("li");
     listItem.setAttribute("id", key.name);
     var item = JSON.parse(localStorage[key.name]);
-    //console.log(item.Id);
-    //console.log(item.Name);
-    //console.log(item.Value);
+    console.log(item.Id);
+    console.log(item.Name);
+    console.log(item.Value);
     var pieces = "Key: " + key.name + ", Value: " + key.value;
     var itemNode = document.createTextNode(pieces);
     listItem.appendChild(itemNode);
