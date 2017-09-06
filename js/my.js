@@ -2,12 +2,12 @@
   let form = document.getElementById('storageForm').addEventListener('submit', function(e) {
     console.log('it works');
     e.preventDefault();
-  }
+  });
    /*
      let form = document.getElementById('storageForm').addEventListener('submit', function(e) {
     console.log('it works');
     e.preventDefault();
-  }
+  });
     // Local Storage Test
     localStorage.setItem('test', 'Hello World');
     console.log(localStorage.getItem('test'));
