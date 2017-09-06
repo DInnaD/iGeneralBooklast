@@ -33,11 +33,12 @@
      if(!validateForm(keyName, keyValue)){//with getElementById
     return false;
   }
-    
+            console.log(key);
             console.log(key.value);
     var jsonkey = key.value;
             console.log(jsonkey);
-
+e.preventDefault();
+  });/*
     // Set to localStorage until 5MB
     try {
     localStorage[key.name] = JSON.stringify(jsonkey);
@@ -77,7 +78,7 @@
      * @name hasClass
      * @desc Function to test for class on an element without jquery
      */
-    function hasClass(el, selector) {
+   /* function hasClass(el, selector) {
       var className = " " + selector + " ";
       if ((" " + el.className + " ").replace(/[\n\t]/g, " ").indexOf(className) > -1) {
         return true;
