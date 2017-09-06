@@ -24,7 +24,7 @@ console.log(key);
   if(localStorage.getItem('bookmarks') === null){
     // Init array
     var bookmarks = [];
-    // Add to array
+    /// Add to array
     //bookmarks.push(key.name);
 	   // Add to array
     bookmarks.push(key);
