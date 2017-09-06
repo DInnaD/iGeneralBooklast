@@ -26,10 +26,10 @@
     }
    
 
-    key.name = storageForm.getElementsByClassName('keyName')[0].value;//document.getElementById("keyName").value;
+    key.name = form.getElementsByClassName('keyName')[0].value;//document.getElementById("keyName").value;
     
           console.log(key.name);
-    key.value = storageForm.getElementsByClassName('keyValue')[0].value;//document.getElementById("keyValue").value;
+    key.value = form.getElementsByClassName('keyValue')[0].value;//document.getElementById("keyValue").value;
          console.log(key);
          e.preventDefault();
          });/*
