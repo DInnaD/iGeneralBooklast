@@ -143,6 +143,24 @@ function Search() {
     var nodata = document.getElementById("nodata");
     nodata.classList.remove("hidden");
   });
+//<a onclick="return addField()" href="#">Add phone</a>
+                //<div id="parentId"></div><br>
+function addField() {
+    if (countOfFields >= maxFieldLimit) {
+        alert("The number of fields reached its maximum");
+        return false;
+    }
+    countOfFields++;
+    curFieldNameId++;
+    var div = document.createElement("div");
+    div.innerHTML = "<input name=\"name_" + curFieldNameId + "\" type=\"text\" /> <a onclick=\"return deleteField(this)\" href=\"#\">[X]</a>";
+    // Добавляем новый узел в конец списка полей
+    document.getElementById("parentId").appendChild(div);
+
+    return false;
+}
+
+
 	// Validate Form
 function validateForm(siteUrl, keyName){
   if(!siteUrl || !keyName ){
