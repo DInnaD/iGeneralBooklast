@@ -1,0 +1,341 @@
+html, body {
+	width: 100% !important;
+	/*height: 100% !important;*/
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-family: sans-serif;
+	background-image: -moz-linear-gradient(30deg, $start 0%, $end 100%);
+	background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, $start), color-stop(100%, $end));
+	background: -webkit-linear-gradient(30deg, $start 0%, $end 100%);
+	background: -o-linear-gradient(30deg, $start 0%, $end 100%);
+	background: -ms-linear-gradient(30deg, $start 0%, $end 100%);
+	background: linear-gradient(30deg, $start 0%, $end 100%);
+}
+h1 {
+	font-size: 1.2em;
+	text-align: center;
+}
+#contactform {
+	position: relative;
+	z-index: 1;
+	/* The z-index should be higher than Google Maps */
+	width: auto;
+	margin: 50px auto 0;
+	padding: 10px;
+	background: black;
+	height: auto;
+	opacity: .70;
+	/* Set the opacity for a slightly transparent Google Form */
+	text-align: center;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+	font-family: "Josefin Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 2.5em;
+	font-weight: 700;
+	line-height: normal;
+	color: #fff;
+}
+#contactform1 {
+	position: relative;
+	z-index: 1;
+	/* The z-index should be higher than Google Maps */
+	/*width: auto;*/
+	/*margin: 60px auto 0;*/
+	/*padding: 10px;*/
+	background: #fff;
+	height: auto;
+	opacity: .95;
+	/* Set the opacity for a slightly transparent Google Form */
+	color: #333;
+	background: /*rgb(250,250,250)*/
+	#fff;
+	padding: 1em;
+	width: 92.5%;
+	margin: auto;
+	max-width: 30em;
+}
+.panel {
+	position: relative;
+}
+#contactform2 {
+	position: absolute;
+}
+#mymap {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 0;
+}
+@media (min-width: 767px) {
+	#mymap {
+		width: 100%;
+		height: 100%;
+	}
+}
+
+.panel {
+	position: relative;
+	background: rgb(250, 250, 250);
+	padding: 1em;
+	width: 92.5%;
+	margin: auto;
+	max-width: 30em;
+	height: 29.99%%;
+}
+input {
+	width: 100%;
+	box-sizing: border-box;
+	font-size: 1em;
+	margin-top: 0.5em;
+	padding: 0.5em;
+}
+input:focus {
+	outline: none;
+	text-decoration: none;
+	color: #1d9b6c;
+	cursor: pointer;
+}
+input::after {
+	width: 100%;
+	height: 10px;
+	background: red;
+}
+#navigation {
+	position: relative;
+}
+.nav-list {
+	width: 92.5%;
+	max-width: 30em;
+	text-align: center;
+	margin: auto;
+}
+.nav-list li {
+	list-style: none;
+	display: inline-block;
+	background: rgba(256, 256, 256, 0.5);
+	padding: 0.7em;
+	margin: 0 0.1em;
+}
+li.active {
+	background-color: rgba(256, 256, 256, 0.95);
+}
+.nav-list li:hover, .nav-list li:focus {
+	text-decoration: none;
+	color: #1d9b6c;
+	cursor: pointer;
+}
+/* Everything but the jumbotron gets side spacing for mobile first views */
+
+.header, .marketing, .footer {
+	padding-right: 15px;
+	padding-left: 15px;
+}
+
+/* Custom page header */
+
+.header {
+	padding-bottom: 20px;
+	border-bottom: 1px solid #e5e5e5;
+}
+
+/* Make the masthead heading the same height as the navigation */
+
+.header h3 {
+	margin-top: 0;
+	margin-bottom: 0;
+	line-height: 40px;
+}
+
+/* Custom page footer */
+
+.footer {
+	padding-top: 19px;
+	color: #777;
+	border-top: 1px solid #e5e5e5;
+}
+
+/* Customize container */
+
+@media (min-width: 768px) {
+	.container {
+		max-width: 100%;
+	}
+}
+.container-narrow>hr {
+	margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+
+.jumbotron {
+	text-align: center;
+	border-bottom: 1px solid #e5e5e5;
+	background: #000;
+}
+.jumbotron .btn {
+	padding: 14px 24px;
+	font-size: 21px;
+}
+
+/* Supporting marketing content */
+
+.marketing {
+	margin: 40px 0;
+}
+.marketing p+h4 {
+	margin-top: 28px;
+}
+
+/* Responsive: Portrait tablets and up */
+
+@media screen and (min-width: 768px) {
+	/* Remove the padding we set earlier */
+	.header, .marketing, .footer {
+		padding-right: 0;
+		padding-left: 0;
+	}
+	/* Space out the masthead */
+	.header {
+		margin-bottom: 30px;
+	}
+	/* Remove the bottom border on the jumbotron for visual effect */
+	.jumbotron {
+		border-bottom: 0;
+	}
+}
+@media screen and (min-width: 768px) bootstrap.min.css:5 .container .jumbotron, .container-fluid .jumbotron {
+	padding: 0 !important;
+	/* padding-right: 60px; */
+	/* padding-left: 60px; */
+}
+h2, h3, h4, h5, h6 {
+	margin-top: 1em;
+	margin-bottom: 0.6em;
+	font-size: 3.4em;
+	font-weight: 300;
+}
+p {
+	font-size: 1.8em;
+}
+@media only screen and (max-width: 360px) {
+	h1 {
+		font-size: 3em;
+	}
+	p {
+		font-size: 1.6em;
+	}
+}
+img {
+	max-width: 100%;
+	height: auto;
+}
+@media \0screen {
+	img {
+		width: auto;
+		/* for ie 8 */
+	}
+}
+a {
+	color: #42DCA3;
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+}
+.intro {
+	display: table;
+	width: 100%;
+	height: auto;
+	padding: 100px 0;
+	text-align: center;
+	color: white;
+	background: url(../img/) no-repeat bottom center scroll;
+	background-color: black;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	-o-background-size: cover;
+}
+.intro .intro-body {
+	display: table-cell;
+	vertical-align: middle;
+}
+.intro .intro-body .brand-heading {
+	font-size: 40px;
+}
+.intro .intro-body .intro-text {
+	font-size: 18px;
+}
+@media (min-width: 768px) {
+	.intro {
+		height: 100%;
+		padding: 0;
+	}
+	.intro .intro-body .brand-heading {
+		font-size: 100px;
+	}
+	.intro .intro-body .intro-text {
+		font-size: 26px;
+	}
+}
+.btn-circle {
+	width: 70px;
+	height: 70px;
+	margin-top: 15px;
+	padding: 7px 16px;
+	border: 2px solid white;
+	border-radius: 100% !important;
+	font-size: 40px;
+	color: white;
+	background: transparent;
+	-webkit-transition: background 0.3s ease-in-out;
+	-moz-transition: background 0.3s ease-in-out;
+	transition: background 0.3s ease-in-out;
+}
+.btn-circle:hover, .btn-circle:focus {
+	outline: none;
+	color: white;
+	background: rgba(255, 255, 255, 0.1);
+}
+.btn-circle i.animated {
+	-webkit-transition-property: -webkit-transform;
+	-webkit-transition-duration: 1s;
+	-moz-transition-property: -moz-transform;
+	-moz-transition-duration: 1s;
+}
+.btn-circle:hover i.animated {
+	-webkit-animation-name: pulse;
+	-moz-animation-name: pulse;
+	-webkit-animation-duration: 1.5s;
+	-moz-animation-duration: 1.5s;
+	-webkit-animation-iteration-count: infinite;
+	-moz-animation-iteration-count: infinite;
+	-webkit-animation-timing-function: linear;
+	-moz-animation-timing-function: linear;
+}
+.btn {
+	text-transform: uppercase;
+	font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 400;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+	border-radius: 0;
+}
+.btn-default {
+	border: 1px solid #42DCA3;
+	color: #42DCA3;
+	background-color: transparent;
+}
+.btn-default:hover, .btn-default:focus {
+	border: 1px solid #42DCA3;
+	outline: none;
+	color: black;
+	background-color: #42DCA3;
+}
