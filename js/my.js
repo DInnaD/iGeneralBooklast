@@ -19,10 +19,13 @@ console.log(key.name);
 console.log(key.value);
     var jsonkey = key.value;//********************************************get one
     console.log(jsonkey);
-console.log(key);	  
+console.log(key);
+	   localStorage.setItem(key.name, JSON.stringify(key));
+
+    alert('Contact ' + tmpObj.name + ' added to memory');
     //localStorage[key.name] = JSON.stringify(jsonkey);
 	  // Set to localStorage until 5MB
-   try {	
+  /* try {	
       // Test if bookmarks is null
   if(localStorage.getItem('bookmarks') === null){
     // Init array
@@ -45,7 +48,7 @@ console.log(key);
     // Re-set back to localStorage
     localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
   }
-	  
+*/	  
   // Clear form
   document.getElementById('submit_button').reset();
 // Re-fetch bookmarks
