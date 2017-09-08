@@ -4,9 +4,11 @@
 
 
 let addForm = document.getElementById('addForm').addEventListener('submit', saveBookmark);
- 
-//// generate id++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++// generate id
-function generateId(){  
+ console.log(addForm);
+ /*
+// generate id++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++// generate id
+
+ function generateId(){  
      
     //let key_int = localStorage.length + 1;
     //key.id = key_int;
@@ -71,5 +73,5 @@ let jsonkey = {
   }
 console.log(jsonkey);
 localStorage[key.name_1] = JSON.stringify(jsonkey);
-
+*/
    })();
