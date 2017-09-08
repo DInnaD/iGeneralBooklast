@@ -135,10 +135,46 @@ input[type=text]:focus {
 </div>
 			
   </div><!--div class="black"-->
-    <div id="contact-panel" class="panel">
+	<div class="jumbotron">
+  <h1>Local Storage Test</h1>
+</div>
+<div class="container">
+		<div class="col-md-offset-2 col-md-8 col-xs-12">
+			<form id="storageForm" role="form">
+				<div class="form-group">
+					<label for="keyName">Key Name: </label>
+					<input type="text" class="form-control" id="keyName" placeholder="Key Name" />
+				</div>
+				<div class="form-group">
+					<label for="keyValue">Key Value: </label>
+					<input type="text" class="form-control" id="keyValue" placeholder="Key Value" />
+				</div>
+				<div class="form-group">
+            <label for="submit" class="sr-only">Submit</label>
+            <input type="submit" class="btn btn-primary" id="submit_button" value="Save" />
+          </div>
+          <div class="form-group">
+            <label for="submit" class="sr-only">Clear</label>
+            <button class="btn btn-danger" id="clear_button" value="Clear">Clear</button>
+          </div>
+			</form>
+		</div>
+	</div>
+  <br />
+  <br />
+  <hr>
+	<div class="container">
+		<div class="col-md-12">
+			<div class="well bg-danger" id="storageWell">
+				<p class="missing" id="nodata">No Data In Storage</p>
+          <ul id="storageList"></ul>
+			</div>
+		</div>
+	</div>
+    <!--div id="contact-panel" class="panel">
        
 <!--div class="jumbotron"-->
-      <form method="GET" action="#" id="addForm">
+      <!--form method="GET" action="#" id="addForm">
  <div>
  <div id="parentIdName">
     <div>
@@ -181,7 +217,7 @@ input[type=text]:focus {
 </div>
  <input class="btn btn-circle" type="submit"  value="GO!" />
 
-	</form>
+	</form-->
 </div>
 <div class="row marketing">
         <div class="col-lg-12">
