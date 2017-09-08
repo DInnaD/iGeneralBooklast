@@ -148,8 +148,8 @@ function initMap() {
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 	infoWindow.setPosition(pos);
 	infoWindow.setContent(browserHasGeolocation ? 'Error: The Geolocation service failed.' : 'Error: Your browser doesn\'t support geolocation.');
-} < /script> < script async defer
-src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyA3AhxWKKpXIAi9-zWrP61IN-5viMwakzQ&callback=initMap" > < /script> < script > window.onload = function() {
+} < /script> 
+ < script > window.onload = function() {
 	document.getElementById('toggler').onclick = function() {
 		openbox('box', this);
 		return false;
