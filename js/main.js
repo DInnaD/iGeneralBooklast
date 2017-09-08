@@ -1,4 +1,22 @@
-let addForm = document.getElementById('addForm').addEventListener('submit', saveBookmark);
+(function() {
+  document.getElementById('submit_button').addEventListener('click', function(e) {
+    e.preventDefault();
+    var key = {};
+    var key_int = localStorage.length + 1;
+    key.id = "item" + key_int;
+    //console.log(key.id);
+    var itemExists = document.getElementById(key.id);
+    if(itemExists !== null) {
+      itemExists.remove();
+    }
+    key.name = document.getElementById("keyName").value;
+    //console.log(key.name);
+    key.value = document.getElementById("keyValue").value;
+    //console.log(key.value);
+    var jsonkey = key.value;
+    //console.log(jsonkey);
+    localStorage[key.name] = JSON.stringify(jsonkey);
+/*let addForm = document.getElementById('addForm').addEventListener('submit', saveBookmark);
  
 //// generate id++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++// generate id
 function generateId(){  
@@ -66,3 +84,5 @@ let jsonkey = {
   }
 console.log(jsonkey);
 localStorage[key.name_1] = JSON.stringify(jsonkey);
+*/
+   })();
