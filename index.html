@@ -32,7 +32,7 @@
 	<script src="https://use.fontawesome.com/053cca04b2.js"></script>
 	<!--script src="js/my.js"></script-->
 	<!--link href="css/style.css" rel="stylesheet"-->
-	<script src="js/main.js"></script>
+	<!--script src="js/main.js"></script-->
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -112,10 +112,7 @@ input[type=text]:focus {
     </ul>
 </div>
 			
-  </div><!--div class="black"-->
-	<div class="jumbotron">
-  <hr>
-</div>
+ 
 <div class="container">
 		<div class="col-md-offset-2 col-md-8 col-xs-12">
 			<form id="storageForm" role="form">
@@ -149,6 +146,68 @@ input[type=text]:focus {
 			</div>
 		</div>
 	</div>
+	<script>
+	(function() {
+  document.getElementById('submit_button').addEventListener('click', function(e) {
+    e.preventDefault();
+    var key = {};
+    var key_int = localStorage.length + 1;
+    key.id = "item" + key_int;
+    //console.log(key.id);
+    var itemExists = document.getElementById(key.id);
+    if(itemExists !== null) {
+      itemExists.remove();
+    }
+    key.name = document.getElementById("keyName").value;
+    //console.log(key.name);
+    key.value = document.getElementById("keyValue").value;
+    //console.log(key.value);
+    var jsonkey = key.value;
+    //console.log(jsonkey);
+    localStorage[key.name] = JSON.stringify(jsonkey);
+    var nodata = document.getElementById("nodata");
+    
+    var nodataHidden = hasClass(nodata, 'hidden');
+    if(nodataHidden == false) {
+      nodata.classList.add("hidden");
+    }
+    
+    var storageList = document.getElementById("storageList");
+    var listItem = document.createElement("li");
+    listItem.setAttribute("id", key.name);
+    var item = JSON.parse(localStorage[key.name]);
+    //console.log(item.Id);
+    //console.log(item.Name);
+    //console.log(item.Value);
+    var pieces = "Key: " + key.name + ", Value: " + key.value;
+    var itemNode = document.createTextNode(pieces);
+    listItem.appendChild(itemNode);
+    storageList.appendChild(listItem);
+    
+    /**
+     * @name hasClass
+     * @desc Function to test for class on an element without jquery
+     */
+    function hasClass(el, selector) {
+      var className = " " + selector + " ";
+      if ((" " + el.className + " ").replace(/[\n\t]/g, " ").indexOf(className) > -1) {
+        return true;
+      }      
+      return false;
+    };
+  });
+  document.getElementById('clear_button').addEventListener('click', function(e) {
+    e.preventDefault();
+    localStorage.clear();
+    var storageList = document.getElementById("storageList");
+    while (storageList.firstChild) {
+    storageList.removeChild(storageList.firstChild);
+    }
+    var nodata = document.getElementById("nodata");
+    nodata.classList.remove("hidden");
+  });
+})();
+	</script>
     <!--div id="contact-panel" class="panel">
        
 <!--div class="jumbotron"-->
