@@ -2,10 +2,14 @@
 
 /*})();*/
 
-
+/*
 let addForm = document.getElementById('addForm').addEventListener('submit', saveBookmark);
  console.log(addForm);
- /*
+ localStorage.setItem('test', 'Hello World');
+    console.log(localStorage.getItem('test'));
+    localStorage.removeItem('test');
+    console.log(localStorage.getItem('test'));
+
 // generate id++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++// generate id
 
  function generateId(){  
