@@ -25,6 +25,16 @@
     for(var i = 0; i<phones.length; i++){
         tmpObj.phones1.push(phones[i].value);
     }
+
+
+localStorage.test="hello"; // here test is key and value is "hello".
+
+var CustomObject={};
+
+localStorage.object=JSON.stringify(CustomObject); store custom object 
+
+console.log(JSON.parse(localStorage.object)); //retrieve object and display
+
 -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
