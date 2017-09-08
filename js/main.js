@@ -3,64 +3,7 @@
 /*})();*/
 
 
-(function() {
-  document.getElementById('submit_button').addEventListener('click', function(e) {
-    e.preventDefault();
-    var key = {};
-    var key_int = localStorage.length + 1;
-    key.id = "item" + key_int;
-    //console.log(key.id);
-    var itemExists = document.getElementById(key.id);
-    if(itemExists !== null) {
-      itemExists.remove();
-    }
-    key.name = document.getElementById("keyName").value;
-    //console.log(key.name);
-    key.value = document.getElementById("keyValue").value;
-    //console.log(key.value);
-    var jsonkey = key.value;
-    //console.log(jsonkey);
-    localStorage[key.name] = JSON.stringify(jsonkey);
-    var nodata = document.getElementById("nodata");
-    
-    var nodataHidden = hasClass(nodata, 'hidden');
-    if(nodataHidden == false) {
-      nodata.classList.add("hidden");
-    }
-    
-    var storageList = document.getElementById("storageList");
-    var listItem = document.createElement("li");
-    listItem.setAttribute("id", key.name);
-    var item = JSON.parse(localStorage[key.name]);
-    //console.log(item.Id);
-    //console.log(item.Name);
-    //console.log(item.Value);
-    var pieces = "Key: " + key.name + ", Value: " + key.value;
-    var itemNode = document.createTextNode(pieces);
-    listItem.appendChild(itemNode);
-    storageList.appendChild(listItem);
-    
- 
-    function hasClass(el, selector) {
-      var className = " " + selector + " ";
-      if ((" " + el.className + " ").replace(/[\n\t]/g, " ").indexOf(className) > -1) {
-        return true;
-      }      
-      return false;
-    };
-  });
-  document.getElementById('clear_button').addEventListener('click', function(e) {
-    e.preventDefault();
-    localStorage.clear();
-    var storageList = document.getElementById("storageList");
-    while (storageList.firstChild) {
-    storageList.removeChild(storageList.firstChild);
-    }
-    var nodata = document.getElementById("nodata");
-    nodata.classList.remove("hidden");
-  });
-})();
-/*let addForm = document.getElementById('addForm').addEventListener('submit', saveBookmark);
+let addForm = document.getElementById('addForm').addEventListener('submit', saveBookmark);
  
 //// generate id++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++// generate id
 function generateId(){  
@@ -128,5 +71,5 @@ let jsonkey = {
   }
 console.log(jsonkey);
 localStorage[key.name_1] = JSON.stringify(jsonkey);
-*/
+
    })();
