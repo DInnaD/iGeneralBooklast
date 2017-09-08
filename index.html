@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Contaktbook</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Phonebook">
+    <meta name="keywords" content="Phonebook">
+    <meta name="autor" content="Sakovets Oleksandr">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+</head>
+<body onload="seeCntakt()">
+    <header class="header">
+    <div class="logo, clearfix">
+    <div class="png">
+        <img src="img/logo.png">
+    </div>
+    <div class="book">
+        <p>ContactBook</p>
+       <p><input type="text" name="Search" placeholder="Search" onkeyup="Search()" id="poisk"></p>
+    </div>
+    <div class="add">
+        <button id="add">New contact</button>
+    </div>
+    </div>
+    </header>
+
+<div class="namebloc, clearfix">
+    <ul id="spisok"></ul>
+
+
+
+</div>
+<div id="form1" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <form action="" method="get" name="contact" id="form">
+            <label for="name1">Name:</label> <input type="text" name="name1" value="11" id="name1"><br><br>
+            <label for="surname">Surname:</label><input type="text" name="surname" value="" id="surname"><br><br>
+            <label for="phone">Phone:</label><input type="text" name="phone" value="" id="phone">
+                <a onclick="return addField()" href="#">Add phone</a>
+                <div id="parentId"></div><br>
+            <label for="emale">E-mail:</label><input type="text" name="email" value="" id="emale">
+                <a onclick="return EaddField()" href="#">Add E-male</a>
+                <div id="EparentId"></div><br>
+            <input type="button" onclick="valid(document.getElementById('form'))" name="submit" value="Add contact" id="vvod">
+        </form>
+    </div>
+</div>
+
+<div>
+    <div id="form2" class="modal2">
+        <div class="modal-content2">
+            <span class="close2">&times;</span> <br>
+            <div id="s-cont"></div>
+            <button id="edit">Edit</button>
+            <button id="del">Delit</button>
+        </div>
+    </div>
+</div>
+<style>
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.clearfix:after,
+.clearfix:before {
+    display: table;
+    content: '';
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+   }
+
+body{
+    background-color: #b3b1b4;
+}
+
+.header{
+    background-color: black;
+    padding: 25px;
+
+}
+
+.png{
+    float: left;
+    width: 400px;
+
+}
+
+.add{
+    float: left;
+    text-align: center;
+    padding: 25px;
+}
+
+#add{
+    font-size: 18px;
+    font-family: "Arial";
+    border: 1px; solid-color: red;
+    margin: 5px;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.book{
+    float: left;
+    text-align: center;
+    color: white;
+    font-size: 36px;
+    font-family: "Arial";
+    font-weight: 800;
+}
+
+#poisk{
+    font-size: 18px;
+    font-family: "Arial";
+    border: 1px; solid-color: red;
+    padding: 5px;
+}
+
+.spisok{
+    list-style: none;
+}
+
+#spisok li a{
+    border-bottom: 1px solid #515151;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+}
+
+#spisok li a:hover{
+   background-color: white;
+}
+
+.namebloc{
+    padding: 25px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal2 {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content{
+    background-color: antiquewhite;
+    margin: 15% auto;
+    padding: 20px;
+    border: 2px solid #2a8539;
+    border-radius: 2px;
+    width: 80%;
+    font-size: 18px;
+    font-family: "Arial";
+    color: rgb(0, 0, 0);
+    line-height: 1.667;
+    text-align: left;
+}
+
+.modal-content2{
+    background-color: #64fac0;
+    margin: 15% auto;
+    padding: 20px;
+    border: 2px solid #856539;
+    border-radius: 2px;
+    width: 80%;
+    font-size: 18px;
+    font-family: "Arial";
+    color: rgb(0, 0, 0);
+    line-height: 1.667;
+    text-align: left;
+}
+
+.close{
+    color: #000;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close2{
+    color: #000;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+#vvod {
+    font-size: 18px;
+    font-family: "Arial";
+    border: 1px;
+    solid-color: red;
+    padding: 10px;
+    border-radius: 5px;
+}
+</style>
+    <script src="js/index.js"></script>
+</body>
+</html>
