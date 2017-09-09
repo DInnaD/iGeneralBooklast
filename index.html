@@ -26,7 +26,21 @@
 </head>
 <body>
 <script>
+var testObject = { 'one': 1, 'two': 2, 'three': 3 };
+console.log('typeof testObject: ' + typeof testObject);
+console.log('testObject properties:');
+for (var prop in testObject) {
+    console.log('  ' + prop + ': ' + testObject[prop]);
+}
 
+// Put the object into storage
+localStorage.setItem('testObject', testObject);
+
+// Retrieve the object from storage
+var retrievedObject = localStorage.getItem('testObject');
+
+console.log('typeof retrievedObject: ' + typeof retrievedObject);
+console.log('Value of retrievedObject: ' + retrievedObject);
 /*	
 localStorage.contact="hello"; // here test is key and value is "hello".
 var contacts={};
@@ -65,7 +79,7 @@ function generateId(){
 }	
 //************************************************************************8
 //
-let addForm = document.getElementById('addForm').addEventListener('submit', addContact);
+let addForm = document.getElementById('addForm').addEventListener('submitAdd', addContact);
 
 function addContact(e, id, addForm) {
 console.log("it works");/*
