@@ -68,7 +68,7 @@ function generateId(){
 let addForm = document.getElementById('addForm').addEventListener('submit', addContact);
 
 function addContact(e, id, addForm) {
-
+console.log("it works");/*
 	// generate current id  
 	let id = generateId();
 
@@ -95,7 +95,14 @@ function addContact(e, id, addForm) {
 	//}
 	localStorage.setItem(contact.name, JSON.stringify(contact));
 	alert('Contact ' + contact.name + ' added to memory');
+// Clear form
+  document.getElementById('addForm').reset();
 
+  // Re-fetch contacts
+  initContacts();
+*/
+  // Prevent form from submitting
+  e.preventDefault();
 }
 
 </script>
