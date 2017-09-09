@@ -17,6 +17,7 @@ $(document).one('pageinit', function(){
 	  	//event.preventDefault();
 
 	  	/* Store data in localstorage */
+		  
 	  	localStorage.setItem('currentDate', $(this).data('date'));
 	  	localStorage.setItem('currentMiles', $(this).data('miles'));
 
@@ -54,9 +55,9 @@ $(document).one('pageinit', function(){
 		if(runs != '' && runs != null){
 
 			for (var i = 0; i < runs.length; i++) {
-				$('#stats').append('<li class="ui-body-inherit ui-li-static"><strong>date:</strong>'+
-					runs[i]["date"]+
-						'<br/><strong>Distance:</strong>'+runs[i]["miles"] +
+				$('#stats').append('<li class="ui-body-inherit ui-li-static"><strong>Name:</strong>'+
+					runs[i]["miles"]+
+						'<br/><strong>Phone:</strong>'+runs[i]["date"] +
 						'm<div class="controls">'+
 							'<a href="#edit" id="editLink" data-miles="'+ runs[i]["miles"]+'" data-date="'+ runs[i]["date"]+'">Edit</a> | <a href="#" id="deleteLink" data-miles="'+ runs[i]["miles"]+'" data-date="'+ runs[i]["date"]+'" onClick="return confirm(\' Are you sure?\')">Delete</a>'
 						+'</div></li>')
@@ -114,6 +115,7 @@ $(document).one('pageinit', function(){
 		function editRun(){
 
 			//get current values
+			
 			currentDate = localStorage.getItem('currentDate');
 			currentMiles = localStorage.getItem('currentMiles');
 
