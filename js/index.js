@@ -34,7 +34,7 @@ $(document).one('pageinit', function(){
 			localStorage.removeItem('runs');
 
 
-			$('#stats').html('<p>You have not logged run</p>');
+			$('#stats').html('<p>You have not logged contact</p>');
 
 			//redirect
 			//window.location.href =  'index.html';
@@ -69,7 +69,7 @@ $(document).one('pageinit', function(){
 
 		}
 		else{
-				$('#stats').html('<p>You have no logged run</p>');
+				$('#stats').html('<p>You have no logged contact</p>');
 
 		}
 
@@ -89,7 +89,7 @@ $(document).one('pageinit', function(){
 		//create run boject
 		var run = {
 				date:date,
-				miles:parseFloat(miles)
+				miles:miles
 		}
 
 		//get current run
@@ -97,7 +97,7 @@ $(document).one('pageinit', function(){
 
 		//add run to runs array
 		runs.push(run);
-		alert('Run added');
+		alert('Contact added');
 
 		//stringify
 		localStorage.setItem('runs', JSON.stringify(runs));
@@ -138,13 +138,13 @@ $(document).one('pageinit', function(){
 		//create run boject
 		var run_update = {
 				date:date,
-				miles:parseFloat(miles)
+				miles:miles
 		}
 
 
 		//add run to runs array
 		runs.push(run_update);
-		alert('Run updated');
+		alert('Contact updated');
 
 		//stringify
 		localStorage.setItem('runs', JSON.stringify(runs));
@@ -184,7 +184,7 @@ $(document).one('pageinit', function(){
 		};
 
 
-		alert('Run deleted');
+		alert('Contact deleted');
 
 
 		//redirect
