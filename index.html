@@ -26,23 +26,77 @@
 </head>
 <body>
 <script>
-	
-LocalSotage[contacts];
 
-
-let contact = {
-    name: [],
-    phone: [],
-    id: []
-}
-	
-localStorage.test="hello"; // here test is key and value is "hello".
+/*	
+localStorage.contact="hello"; // here test is key and value is "hello".
 var contacts={};
 localStorage.object=JSON.stringify(contacts); //store custom object 
-console.log(JSON.parse(localStorage.object)); //retrieve object and display
+console.log(JSON.parse(localStorage.contact)); //retrieve object and display
+*/
+localSotage[contacts];
 
+	let contact = {
+    name: [],
+    phone: [],
+    url: [],
+    info: [],
+    id: []
+}
 
+//*********************************************************************9
+//Generate id of each contact
+function generateId(){	
+	   
+    //let key_int = localStorage.length + 1;
+    //key.id = key_int;
 
+    try{
+   if(localStorage[contacts].length === 0){ return 1;
+		}else{
+			var key_int = localStorage.length - 1;
+    		return key.id = key_int + 1;
+    	}
+    	    } catch (e) {
+  if (e !==  key.id) {
+  alert('Error data');
+ }
+}
+
+}	
+//************************************************************************8
+//
+let addForm = document.getElementById('addForm').addEventListener('submit', addContact);
+
+function addContact(e, id, addForm) {
+
+	// generate current id  
+	let id = generateId();
+
+	let contact = {}
+	console.log(contact);
+
+	contact.name = addForm.getElementsByClassName('name')[0].value;
+    console.log(contact.name);
+    contact,phone = addForm.getElementsByClassName('phone')[0].value;
+    console.log(contact.phone);
+    contact.url = addForm.getElementsByClassName('url')[0].value;
+    console.log(contact.url);
+    contact.info = addForm.getElementsByClassName('info')[0].value;
+    console.log(contact.info);
+
+    
+
+	if(!validateForm(name, phone, url, info)){
+    return false;
+  }
+
+    //localSotage.setItem = function(contact.name, contact) {
+    //localStorage[contact.name] = JSON.stringify(contact);
+	//}
+	localStorage.setItem(contact.name, JSON.stringify(contact));
+	alert('Contact ' + contact.name + ' added to memory');
+
+}
 
 </script>
 <div data-role="page" id="home">
@@ -59,7 +113,7 @@ console.log(JSON.parse(localStorage.object)); //retrieve object and display
 		
 		<ul id="search" data-role="listview" data-filter="true" data-filter-placeholder="Search" data-inset="true"></ul>
 		<br>
-		<ul id="contact-list"></ul>
+		<ul id="contactList"></ul>
 		<button id="clearAll" onclick="return confirm('Are you sure?')" data-theme="b">Clear Contacts</button>
 	</div>
 	
@@ -82,10 +136,10 @@ console.log(JSON.parse(localStorage.object)); //retrieve object and display
 		<h3>Add Contact</h3>
 		<form id="addForm" action="index_submit" method="get" accept-charset="utf-8">
 			<label for="addName"></label>
-			<input type="text" id="addName" placeholder="Enter Name"/>	
+			<input type="text" id="addName" name="name" placeholder="Enter Name"/>	
 
 			<label for="addDate"></label>
-			<input type="text" id="addPhone" placeholder="Enter Phone"/>
+			<input type="text" id="addPhone" name="phone" placeholder="Enter Phone"/>
 
 			<button id="submitAdd" class="ui-btn ui-btn-b ui-corder-all">Submit</button>
 		</form>
@@ -111,10 +165,10 @@ console.log(JSON.parse(localStorage.object)); //retrieve object and display
 		<h3>Edit Contact</h3>
 		<form id="editForm" action="index_submit" method="get" accept-charset="utf-8">
 			<label for="editName"></label>
-			<input type="text" id="editMiles"/>	
+			<input type="text" id="editName"/>	
 
 			<label for="editPhone"></label>
-			<input type="text"  id="editDate" />
+			<input type="text"  id="editPhone" />
 
 			<button id="submitEdit" class="ui-btn ui-btn-b ui-corder-all">Submit</button>
 		</form>
