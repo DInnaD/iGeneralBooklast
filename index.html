@@ -25,7 +25,26 @@
 
 </head>
 <body>
+<script>
+	
+LocalSotage[contacts];
 
+
+let contact = {
+    name: [],
+    phone: [],
+    id: []
+}
+	
+localStorage.test="hello"; // here test is key and value is "hello".
+var contacts={};
+localStorage.object=JSON.stringify(contacts); store custom object 
+console.log(JSON.parse(localStorage.object)); //retrieve object and display
+
+
+
+
+</script>
 <div data-role="page" id="home">
 	<header data-role="header" data-theme="b">
 	<h1>iGeneralBook</h1>
@@ -104,16 +123,7 @@
 	<h4>iGeneralBook &copy; 2017</h4>
 </footer>
 </div>
-<script>
-localStorage.test="hello"; // here test is key and value is "hello".
-var contacts={};
-localStorage.object=JSON.stringify(contacts); store custom object 
-console.log(JSON.parse(localStorage.object)); //retrieve object and display
 
-
-
-
-</script>
 
 <!--div id="mymap"></div>
 <div class="contactform">
