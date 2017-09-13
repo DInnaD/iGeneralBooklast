@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+
 <head>
   <title>iGeneralBook</title>
 
@@ -54,7 +54,7 @@ return isValid;
     <button id="clearContacts" onclick="return confirm('Are you sure?')" data-theme="b">Clear Contacts</button>
   </div>
 <footer data-role="footer" data-theme="b">
-  <h4>iGeneral Book &copy; 2015</h4>
+  <h4>iGeneral Book &copy; 2017</h4>
 </footer>
 </div>
 
@@ -91,7 +91,7 @@ return isValid;
     </form>
     </div>
 <footer data-role="footer" data-theme="b">
-  <h4>iGeneral Book &copy; 2015</h4>
+  <h4>iGeneral Book &copy; 2017</h4>
 </footer>
 </div>
 
@@ -126,6 +126,10 @@ return isValid;
       <button id="submitEdit" class="ui-btn ui-btn-b ui-corder-all">Submit</button>
     </form>
     </div>
+	<footer data-role="footer" data-theme="b">
+  <h4>iGeneral Book &copy; 2017</h4>
+</footer>
+</div>
 
 </div>
 
@@ -201,7 +205,12 @@ $(document).on('pageinit', function(){
    // $(this).val("+380-")
   //});
 //});
- unction validateSignup()
+	//mask
+  $(":input").inputmask();
+
+$("#addphone").inputmask({"mask": "(999) 999-9999"});
+$("#editphone").inputmask({"mask": "(999) 999-9999"});
+ function validateSignup()
 {   
     $.validator.addMethod(
             "regex",
@@ -366,13 +375,13 @@ $(document).on('pageinit', function(){
       // Store data in localstorage 
       localStorage.setItem('currentPhone', $(this).data('phone'));
       localStorage.setItem('currentName', $(this).data('name'));
-      localStorage.setItem('currentPhone', $(this).data('phone'));
-      localStorage.setItem('currentName', $(this).data('name'));
+      localStorage.setItem('currentUrl', $(this).data('url'));
+      localStorage.setItem('currentInfo', $(this).data('info'));
       //get current values
       currentPhone = localStorage.getItem('currentPhone');
       currentName = localStorage.getItem('currentName');
-      currentPhone = localStorage.getItem('currentPhone');
-      currentName = localStorage.getItem('currentName');
+      currentUrl = localStorage.getItem('currentUrl');
+      currentInfo = localStorage.getItem('currentInfo');
       //get current contact
     let contacts = getContactsObject();
     for (let i = 0; i < contacts.length; i++) {
@@ -397,10 +406,8 @@ $(document).on('pageinit', function(){
           
       }
       //return contacts object
-      return contacts.sort(function(a,b){return new Phone(b.phone) - new Phone(b.phone)});
-      return contacts.sort(function(a,b){return new Url(b.url) - new Url(b.url)});
-      return contacts.sort(function(a,b){return new Info(b.info) - new Info(b.info)});
-    }
+      return contacts.sort(function(a,b){return new Name(b.name) - new Name(b.name)});
+       }
 });
 
 
