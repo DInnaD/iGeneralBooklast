@@ -55,7 +55,9 @@ function validate_form ( )
 <body>
 	
 	<div id="mymap" style="position: absolute !important; top: 0px;"></div>
-	<div id="contactform">
+	<div id="contactform" class="ui-mobile-viewport ui-overlay-a" style="
+    overflow: none;
+">
 	<!-- #home Page -->
 		<div data-role="page" id="home">
 
@@ -69,11 +71,14 @@ function validate_form ( )
 			<h5></h5>
 			<p style="color: #fff !important; font-size: 0.8em;">Instruction<br></p>
 		</div>
-		<div id="navigation">
-			<ul class="nav-list">
-				<li class="btn btn-circle" id="js-show-all"><a href="#home" data-transition="none"><i aria-hidden="true" class="fa fa-home"></i></a></li>
-				<li class="btn btn-circle" id="js-search"><i aria-hidden="true" class="fa fa-search"></i></li>
-				<li class="btn btn-circle" id="add"><a href="#add" data-transition="none"><i aria-hidden="true" class="fa fa-plus"></i></a></li>
+			
+		<div data-role="navbar">
+			<ul>
+				<li class="btn btn-circle" ><a href="#home" data-transition="none" data-icon="home">
+					<!--i aria-hidden="true" class="fa fa-home"></i--></a></li>
+				<li class="btn btn-circle" ><i aria-hidden="true" class="fa fa-search"></i></li>
+				<li class="btn btn-circle" ><a href="#add" data-transition="none"  data-icon="plus">
+					<!--i aria-hidden="true" class="fa fa-plus"></i--></a></li>
 			</ul>
 		</div>
 		<hr>
