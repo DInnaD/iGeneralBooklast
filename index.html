@@ -283,10 +283,10 @@ function validateSignup(name, phone, url, info)
 		phone = $('#addPhone').val();
 		 url = $('#addUrl').val();
     		info = $('#addInfo').val();
-		// Create 'run' object for passing into HTML5 local storage API
+		// Create 'contact' object for passing into HTML5 local storage API
 	//validateForm();
 	//validateSignup(name, phone, url, info);
-		 var run = {
+		 var contact = {
 			name: name,
         phone: phone,
         url: url,
@@ -296,10 +296,10 @@ function validateSignup(name, phone, url, info)
 		 
 		var runs = getRunsObject();
 		
-		// Add run to runs array
-		runs.push(run);
+		// Add contact to runs array
+		runs.push(contact);
 		
-		alert('Run Added');
+		alert('contact Added');
 		
 		// Local storage values have to be strings
 		// Set stringified object to localStorage
@@ -335,7 +335,7 @@ function validateSignup(name, phone, url, info)
     		let info = $('#editInfo').val();
 		
 			
-		// Create 'run' object
+		// Create 'contact' object
 		var update_run = {
 			name: name,
         phone: phone,
@@ -343,10 +343,10 @@ function validateSignup(name, phone, url, info)
         info: info
 		};
 		
-		// Add run to runs array
+		// Add contact to runs array
 		runs.push(update_run);
 		
-		alert('Run Updated');
+		alert('contact Updated');
 		
 		// Set stringified object to localStorage
 		localStorage.setItem('runs', JSON.stringify(runs));
@@ -387,7 +387,7 @@ function validateSignup(name, phone, url, info)
 			localStorage.setItem('runs',JSON.stringify(runs));
 		}
 		
-		alert('Run Deleted');
+		alert('contact Deleted');
 		
 		// Redirect
 		window.location.href="index.html";
@@ -409,7 +409,7 @@ function validateSignup(name, phone, url, info)
 			var runs = JSON.parse(currentRuns);
 		}
 		
-		// Return runs object; newest run first by date
+		// Return runs object; newest contact first by date
 		return runs.sort(function(a, b){return new Date(b.date) - new Date(a.date)});
 	 }
 	 
@@ -430,6 +430,5 @@ function validateSignup(name, phone, url, info)
 });
 	</script>
 
-	
-</body>
-</html>
+	</body>
+	</html>
