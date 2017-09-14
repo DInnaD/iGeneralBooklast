@@ -60,10 +60,11 @@ function validate_form ( )
 ">
 	<!-- #home Page -->
 		<div data-role="page" id="home">
-
+		<header data-role="header" data-theme="b">
 
 		
 		<hr>
+			
 		<div class="brand">
 			<a href="#" id="toggler" style="color: #42DCA3;" title="Click what to do"><i aria-hidden="true" class="fa fa-info-circle" style="35px !important;"></i></a>General Book
 		</div><!--"brand"-->
@@ -71,13 +72,13 @@ function validate_form ( )
 			<h5></h5>
 			<p style="color: #fff !important; font-size: 0.8em;">Instruction<br></p>
 		</div>
-			
+		</header>	
 		<div data-role="navbar">
 			<ul>
-				<li class="btn btn-circle" ><a href="#home" data-transition="none" data-icon="home">
+				<li><a href="#home" data-transition="none" data-icon="home">
 					<!--i aria-hidden="true" class="fa fa-home"></i--></a></li>
-				<li class="btn btn-circle" ><i aria-hidden="true" class="fa fa-search"></i></li>
-				<li class="btn btn-circle" ><a href="#add" data-transition="none"  data-icon="plus">
+				<!--li class="btn btn-circle" ><i aria-hidden="true" class="fa fa-search"></i></li-->
+				<li><a href="#add" data-transition="none"  data-icon="plus">
 					<!--i aria-hidden="true" class="fa fa-plus"></i--></a></li>
 			</ul>
 		</div>
