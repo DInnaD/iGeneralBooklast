@@ -1,11 +1,583 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<style>
-* {
-  box-sizing: border-box;
-}
+	<meta charset="utf-8">
+	
+	<meta content="" name="description">
+	<meta content="" name="author">
+	<title>iGeneralBook</title><!-- Bootstrap Core CSS -->
+	<!-- jQuery mobile, jQuery UI, custom stylesheets -->
+	
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css">
+	<link rel="stylesheet" href="css/style.css">
 
+	<!-- jQuery, jQuery UI, jQuery mobile, custom scripts -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+	<script src="js/script.js"></script>
+		<!--script>
+			$(function(){
+				$('.date').each(function(){
+					$(this).datepicker();
+				});
+			});
+		</script-->
+
+	<link href="css/bootstrap.min.css" rel="stylesheet"><!-- Custom CSS -->
+	<link href="css/business-casual.css" rel="stylesheet"><!-- Fonts -->
+	
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css"><!--link rel="stylesheet" href="libs/font-awesome-4.7.0/css/font-awesome.min.css"-->
+	<script src="https://use.fontawesome.com/053cca04b2.js">
+	</script>
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	<script type="text/javascript">
+/*
+function validate_form ( )
+{
+	valid = true;
+        if (( document.form.name1.value || document.form.phone.value) == "" )
+        {
+                alert ( "Please, feel full 'Required Name and Phone data '." );
+                valid = false;
+        }
+        return valid;
+}
+*/
+</script>
+</head>
+<body>
+	
+	<div id="mymap" style="position: absolute !important; top: 0px;"></div>
+	<div id="contactform">
+	<!-- #home Page -->
+		<div data-role="page" id="home">
+
+
+		
+		<hr>
+		<div class="brand">
+			<a href="#" id="toggler" style="color: #42DCA3;" title="Click what to do"><i aria-hidden="true" class="fa fa-info-circle" style="35px !important;"></i></a>General Book
+		</div><!--"brand"-->
+		<div id="box" style="display: none; text-align: center; position: relative;">
+			<h5></h5>
+			<p style="color: #fff !important; font-size: 0.8em;">Instruction<br></p>
+		</div>
+		<div id="navigation">
+			<ul class="nav-list">
+				<li class="btn btn-circle" id="js-show-all"><a href="#home" data-transition="none"><i aria-hidden="true" class="fa fa-home"></i></a></li>
+				<li class="btn btn-circle" id="js-search"><i aria-hidden="true" class="fa fa-search"></i></li>
+				<li class="btn btn-circle" id="add"><a href="#add" data-transition="none"><i aria-hidden="true" class="fa fa-plus"></i></a></li>
+			</ul>
+		</div>
+		<hr>
+		<div data-role="content">
+				
+				
+				<ul id="stats" data-role="listview" data-filter="true" data-filter-placeholder="Search.." data-inset="true"></ul>
+				<br>
+				<button id="clearContacts" onclick="return confirm('Are You Sure?')" data-theme="b">Clear iGeneralBook</button>
+				<br>
+				<!--button id="compareContacts" onclick="return confirm('Are You Sure delete contact with the same phone data?')" data-theme="b">Clear the same contact</button-->
+			
+			</div>
+			<footer id="footer" data-role="footer" data-theme="b">
+				<h4>iGeneral Book 2017</h4>
+			</footer>
+		</div><!--home-->
+
+
+	</div><!--black-->
+		<!-- ADD PAGE -->
+		<div data-role="page" id="add">
+	<hr>
+		<div class="brand">
+			<a href="#" id="toggler" style="color: #42DCA3;" title="Click what to do"><i aria-hidden="true" class="fa fa-info-circle" style="35px !important;"></i></a>General Book
+		</div><!--"brand"-->
+		<div id="box" style="display: none; text-align: center; position: relative;">
+			<h5></h5>
+			<p style="color: #fff !important; font-size: 0.8em;">Instruction<br></p>
+		</div>
+		<div id="navigation">
+			<ul class="nav-list">
+				<li class="btn btn-circle" id="js-show-all"><a href="#home" data-transition="none"><i aria-hidden="true" class="fa fa-home"></i></a></li>
+				<li class="btn btn-circle" id="js-search"><i aria-hidden="true" class="fa fa-search"></i></li>
+				<li class="btn btn-circle" id="add"><a href="#add" data-transition="none"><i aria-hidden="true" class="fa fa-plus"></i></a></li>
+			</ul>
+		</div>
+		<hr>
+	<div data-role="content">
+			<h3>iGeneral Book</h3>
+			<form id="addForm">
+				<label for="addName"></label>
+      <div class="ui-btn ui-btn-b ui-corder-all"><input type="text" class="form-field" id="addName" required="required" placeholder="Enter Name" class="signupForm form-field" placeholder="Enter Name" /> 
+</div>
+      
+      <label for="addPhone"></label>
+      <div class="ui-btn ui-btn-b ui-corder-all"><input type="tel" placeholder="+38-1234567890" pattern="^\+38-\d{10}$" required="required" data-role="phone" id="addPhone" placeholder="Enter Phone" class="signupForm form-field" />
+</div>
+      <label for="addUrl"></label>
+      <div class="ui-btn ui-btn-b ui-corder-all"><input type="text" class="form-field" id="addUrl" placeholder="Enter Url" pattern="^\https://\d{1000}$" required="required" class="signupForm form-field" placeholder="Enter Url"/> 
+</div>
+      <label for="addInfo"></label>
+      <div class="ui-btn ui-btn-b ui-corder-all"><input type="text" class="form-field" data-role="info"  id="addInfo" placeholder="Enter Info" class="signupForm form-field" placeholder="Enter Info"/>
+</div>				
+				<button id="submitAdd">Submit</button>
+			</form>
+			</div>
+		
+			<footer data-role="footer" data-theme="b">
+				<h4>iGeneral Book 2017</h4>
+			</footer>
+		</div>
+<!-- EDIT PAGE -->
+		<div data-role="page" id="edit">
+<hr>
+		<div class="brand">
+			<a href="#" id="toggler" style="color: #42DCA3;" title="Click what to do"><i aria-hidden="true" class="fa fa-info-circle" style="35px !important;"></i></a>General Book
+		</div><!--"brand"-->
+		<div id="box" style="display: none; text-align: center; position: relative;">
+			<h5></h5>
+			<p style="color: #fff !important; font-size: 0.8em;">Instruction<br></p>
+		</div>
+		<div id="navigation">
+			<ul class="nav-list">
+				<li class="btn btn-circle" id="js-show-all"><a href="#home" data-transition="none"><i aria-hidden="true" class="fa fa-home"></i></a></li>
+				<li class="btn btn-circle" id="js-search"><i aria-hidden="true" class="fa fa-search"></i></li>
+				<li class="btn btn-circle" id="add"><a href="#add" data-transition="none"><i aria-hidden="true" class="fa fa-plus"></i></a></li>
+			</ul>
+		</div>
+		<hr>
+		<div data-role="content">
+			<h3>Edit Your Contact</h3>
+			<form id="editForm">
+				
+				 <label for="editName"></label>
+     <div class="ui-btn ui-btn-b ui-corder-all"><input type="text" class="form-field" id="editName" required="required" class="signupForm form-field" placeholder="Enter Name" /> 
+</div>
+      <label for="editPhone"></label><!--pattern="^\+380-\d{3}-\d{2}-\d{2}$" pattern="^\+38-\d{10}$" pattern="^\https://\d{1000}$"-->
+      <div class="ui-btn ui-btn-b ui-corder-all"><input type="tel" placeholder="+38-1234567890" pattern="^\+38-\d{10}$" required="required" data-role="phone" class="signupForm form-field" id="editPhone" />
+</div>
+       <label for="editUrl"></label>
+      <div class="ui-btn ui-btn-b ui-corder-all"><input type="text" class="form-field" id="editUrl"  required="required" class="signupForm form-field" placeholder="Enter Url" /> 
+</div>
+      <label for="editInfo"></label>
+      <div class="ui-btn ui-btn-b ui-corder-all"><input type="text" data-role="info" class="form-field" id="editInfo" class="signupForm form-field" placeholder="Enter Info" />
+</div>
+	<button id="submitEdit" >Update</button>
+			</form>
+			</div>
+		
+			<footer data-role="footer" data-theme="b">
+				<h4>iGeneral Book 2017</h4>
+			</footer>
+		</div>
+<style type="text/css">
+		
+		body{
+	text-align:center;
+}
+ul{
+	display:block;
+}
+.controls{
+	float:right;
+}
+#stats p{
+	color:red;
+}
+	</style>
+	<script>
+		// Need to use pageinit, not ready be/c we want the index page to run once!deleteContact
+$(document).one('pageinit', function(){
+	// Display contacts
+	showContacts();
+	// Add Stats Handler
+	$('#submitAdd').on('tap', addContact);
+	
+	// Edit Stats Handler
+	$('#submitEdit').on('tap', editContact);
+	
+		// Delete Stats Handler
+	$('#stats').on('tap','#deleteLink', deleteContact);
+	
+	$('#stats').on('tap','#moreLink', moreContact);
+	
+	// Set Current Stats Handler
+	$('#stats').on('tap','#editLink', setCurrent);
+	
+	
+	// Clear Handler
+	$('#clearContacts').on('tap', clearContacts);
+	
+	
+	// Show all stats on homepage/
+	 function showContacts(){
+		 //if
+		// get contacts string from localStorage
+		var contacts = getContactsObject();
+		
+		// Check if empty
+		if((contacts != '' && contacts != null) && contacts != undefined){
+			for(var i = 0;i < contacts.length;i++){
+				$('#stats').append('<li class="ui-body-inherit ui-li-static"><strong></strong>'+contacts[i]["name"]+
+				' <br><strong></strong>'+contacts[i]["phone"]+' <div class="controls">' +
+				'<a target="_blank" href="'+ contacts[i]["url"]+'">Visit</a> | <a href="#home" id="moreLink" data-name="'+contacts[i]["name"]+'" data-phone="'+contacts[i]["phone"]+'" data-url="'+contacts[i]["url"]+'" data-info="'+contacts[i]["info"]+'">More</a> | <a href="#edit" id="editLink" data-name="'+contacts[i]["name"]+'" data-phone="'+contacts[i]["phone"]+'" data-url="'+contacts[i]["url"]+'" data-info="'+contacts[i]["info"]+'">Edit</a> | <a href="#" id="deleteLink" data-name="'+contacts[i]["name"]+'" data-phone="'+contacts[i]["phone"]+'" data-url="'+contacts[i]["url"]+'" data-info="'+contacts[i]["info"]+'" onclick="return confirm(\'Are You Sure?\')">Delete</a></li>');
+			}
+			$('#home').bind('pageinit', function(){
+				$('#stats').listview('refresh');
+			});
+		} else {
+			$('#stats').html('<p>You have no logged contacts</p>');
+		}
+	 }
+	/*function scrollMore(){
+		$("a[href='#home']").click(function() {
+  $("html, body").animate({ scrollTop: $(document).height() }, "slow");
+  return false;
+});
+	
+}*/
+	
+	// More A contact
+	 function moreContact(){
+	 		// Set stringified object to localStorage
+		 // Store data in localstorage 
+     localStorage.setItem('currentPhone', $(this).data('phone'));
+      localStorage.setItem('currentName', $(this).data('name'));
+      localStorage.setItem('currentUrl', $(this).data('url'));
+      localStorage.setItem('currentInfo', $(this).data('info'));
+		//get current values
+      currentPhone = localStorage.getItem('currentPhone');
+      currentName = localStorage.getItem('currentName');
+      currentUrl = localStorage.getItem('currentUrl');
+      currentInfo = localStorage.getItem('currentInfo');
+		var contacts = getContactsObject();
+		if((contacts != '' && contacts != null) && contacts != undefined){
+		// Loop through contacts
+		for(var i = 0;i < contacts.length;i++){
+			if((contacts[i].name == currentName && contacts[i].phone == currentPhone) && (contacts[i].url == currentUrl && contacts[i].info == currentInfo)){
+				
+				$('#stats').append('<li class="ui-body-inherit ui-li-static"><strong></strong>'+contacts[i]["name"]+
+				' <br><strong></strong>'+contacts[i]["phone"]+
+				' <br><strong></strong>'+contacts[i]["url"]+
+				' <br><strong></strong>'+contacts[i]["info"]+' <div class="controls">' +
+				'<a target="_blank" href="'+ contacts[i]["url"]+'">Visit</a> | <a target="_self" href="index.html" id="backLink">Back</a> | <a href="#edit" id="editLink" data-name="'+contacts[i]["name"]+'" data-phone="'+contacts[i]["phone"]+'" data-url="'+contacts[i]["url"]+'" data-info="'+contacts[i]["info"]+'">Edit</a> | <a href="#" id="deleteLink" data-name="'+contacts[i]["name"]+'" data-phone="'+contacts[i]["phone"]+'" data-url="'+contacts[i]["url"]+'" data-info="'+contacts[i]["info"]+'" onclick="return confirm(\'Are You Sure?\')">Delete</a></li>');
+				}//if
+			}//for
+			$('#home').bind('pageinit', function(){
+				$('#stats').listview('refresh');
+			
+			});//func
+			//scrollMore();
+			$("a[href='#home']").click(function() {
+  $("html, body").animate({ scrollTop: $(document).height() }, "slow");
+  return false;
+});
+		
+			}//if null
+			
+		} //fmain //scrolldown
+	
+/*
+function validateForm() {
+var isValid = true;
+$('.form-field').each(function() {
+if ( $(this).val() === '' )
+isValid = false;
+});
+return isValid;
+}
+/*	
+function validateSignup(name, phone, url, info)
+{   
+    $.validator.addMethod(
+            "regex",
+            function(value, element, regexp) 
+            {
+                if (regexp.constructor != RegExp)
+                    regexp = new RegExp(regexp);
+                else if (regexp.global)
+                    regexp.lastIndex = 0;
+                return this.optional(element) || regexp.test(value);
+            },
+            "Please check your input."
+    );
+    $('.signupForm').validate(//????????????????????????????# to html either
+    {
+        onkeyup : false,
+        errorClass: "req_mess",
+        ignore: ":hidden",
+        validClass: "signup_valid_class",
+        errorClass: "signup_error_class",
+        rules:
+        {
+            name:
+            {
+                required: true,
+                //name: true,
+                regex: /^[a-zA-Z]+$/,
+            },
+           
+            phone:
+            {
+                required: true,
+                regex: /^[+-]{1}[0-9]{1,3}\-[0-9]{10}$/,
+            },
+            url:
+            {
+                required: true,
+                //url: true,
+                regex: /[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/gi,
+            },
+            info:
+            {
+                required: true,
+                //info: true,
+                regex: /^[a-zA-Z]+$/,
+            },
+        },
+        messages: 
+        {
+            name: 
+            {
+                required: 'You must enter a name',
+                regex: 'Please enter a valid name without spacial chars, ie, Name'
+            },
+       
+            phone: 
+            {
+                required: "Please enter your phone number",
+                regex: "e.g. +38-0000000000"    
+            },
+            url: 
+            {
+                required: 'You must enter a url',
+                regex: 'Please enter a valid url without spacial chars, ie, http://'
+            },
+            info: 
+            {
+                required: 'You must enter a info',
+                regex: 'Please enter a valid info without spacial chars, ie, Chars'
+            },
+        },
+        submitHandler: function (submitAdd, submitEdit)
+        {
+            return true;
+        }
+    });
+}
+*/
+	/*
+	function generateId(){
+	
+console.log(contact);
+try{
+   if(localStorage[contacts].length === 0){ return 1;
+		}else{
+ let contact_int = localStorage.length + 1;
+    contact.id = contact_int;
+    //console.log(contact.id);
+ let itemExists = document.getElementById(contact.id);
+    if(itemExists !== null) {
+      itemExists.remove();
+      }
+    	    } catch (e) {
+  if (e !==  contact.id) {
+  alert('Error data');
+ }
+ }
+ */
+	// Add A contact
+	 function addContact(){
+		 //let contact = {
+    //name: [],
+    //phone: [],
+    //url: [],
+    //info: [],
+    //id: []
+//}
+//generateId();
+	
+		 let name;
+		 let phone;
+		 let url;
+		 let info;
+	 
+		 
+		// Get form values
+		 name = $('#addName').val();
+		phone = $('#addPhone').val();
+		 url = $('#addUrl').val();
+    		info = $('#addInfo').val();
+		//let id = contact.id;
+		if((name != '' && name != null) && name != undefined){	 
+		 
+		// Create 'contact' object for passing into HTML5 local storage API
+		//validateForm();
+		//validateSignup(name, phone, url, info);
+		 
+		 
+		 var contact = {
+			 //id: id;
+			name: name,
+        phone: phone,
+        url: url,
+        info: info
+		};
+	
+		 
+		var contacts = getContactsObject();
+		
+		// Add contact to contacts array
+		contacts.push(contact);
+		
+		alert('contact Added');
+		
+		// Local storage values have to be strings
+		// Set stringified object to localStorage
+		localStorage.setItem('contacts', JSON.stringify(contacts));
+		
+		// Redirect to index page
+		window.location.href="index.html";
+		
+		
+		  }else{
+	 alert('Please, enter Name!');
+	 }
+		 return false;
+	 }
+	 
+	 
+	 // Edit A contact
+	 function editContact(){
+		//get current values
+      currentPhone = localStorage.getItem('currentPhone');
+      currentName = localStorage.getItem('currentName');
+      currentUrl = localStorage.getItem('currentUrl');
+      currentInfo = localStorage.getItem('currentInfo');
+		var contacts = getContactsObject();
+		
+		// Loop through contacts
+		for(var i = 0;i < contacts.length;i++){
+			if((contacts[i].name == currentName && contacts[i].phone == currentPhone) && (contacts[i].url == currentUrl && contacts[i].info == currentInfo)){
+				contacts.splice(i,1);
+			}
+			localStorage.setItem('contacts',JSON.stringify(contacts));
+		}
+		// Get form values
+		var name = $('#editName').val();
+		var phone = $('#editPhone').val();
+		 let url = $('#editUrl').val();
+    		let info = $('#editInfo').val();
+		
+			
+		// Create 'contact' object
+		var update_contact = {
+			name: name,
+        phone: phone,
+        url: url,
+        info: info
+		};
+		
+		// Add contact to contacts array
+		contacts.push(update_contact);
+		
+		alert('contact Updated');
+		
+		// Set stringified object to localStorage
+		localStorage.setItem('contacts', JSON.stringify(contacts));
+		
+		// Redirect
+		window.location.href="index.html";
+		
+		return false;
+	
+	 }
+	 //function compareContacts(){}//*****************drop?????????????????/
+	 function clearContacts(){
+		localStorage.removeItem('contacts');
+		$('#stats').html('<p>You have no logged Contacts</p>');
+		 
+		 
+	 }
+	 
+	 
+	 // Delete A contact
+	 function deleteContact(){
+		// Set stringified object to localStorage
+		 // Store data in localstorage 
+      localStorage.setItem('currentPhone', $(this).data('phone'));
+      localStorage.setItem('currentName', $(this).data('name'));
+      localStorage.setItem('currentUrl', $(this).data('url'));
+      localStorage.setItem('currentInfo', $(this).data('info'));
+      //get current values
+      currentPhone = localStorage.getItem('currentPhone');
+      currentName = localStorage.getItem('currentName');
+      currentUrl = localStorage.getItem('currentUrl');
+      currentInfo = localStorage.getItem('currentInfo');
+		
+		var contacts = getContactsObject();
+		
+		// Loop through contacts
+		for(var i = 0;i < contacts.length;i++){
+			if((contacts[i].name == currentName && contacts[i].phone == currentPhone) && (contacts[i].url == currentUrl && contacts[i].info == currentInfo)){
+				contacts.splice(i,1);
+			}
+			localStorage.setItem('contacts',JSON.stringify(contacts));
+		}
+		
+		alert('contact Deleted');
+		
+		// Redirect
+		window.location.href="index.html";
+		
+		return false;
+	 }
+	 
+	 
+	// Get the current contacts object
+	 function getContactsObject(){
+		// Set contacts array
+		var contacts = new Array();
+		// Get current contacts from local storage; it will be returned as a default string
+		var currentContacts = localStorage.getItem('contacts');
+		
+		// Check localStorage for data
+		if(currentContacts != null){
+			// Set it to contacts
+			var contacts = JSON.parse(currentContacts);
+		}
+		
+		// Return contacts object; newest contact first by date
+		return contacts.sort(function(a, b){return new Date(b.date) - new Date(a.date)});
+	 }
+	 
+	// Set the current clicked 
+	 function setCurrent(){
+			// Set local Storage items
+	  localStorage.setItem('currentName', $(this).data('name'));
+      localStorage.setItem('currentPhone', $(this).data('phone'));
+      localStorage.setItem('currentUrl', $(this).data('url'));
+      localStorage.setItem('currentInfo', $(this).data('info'));
+      
+      //set form value
+      $('#editName').val(localStorage.getItem('currentName'));
+      $('#editPhone').val(localStorage.getItem('currentPhone'));
+      $('#editUrl').val(localStorage.getItem('currentUrl'));
+      $('#editInfo').val(localStorage.getItem('currentInfo'));
+	 }
+});
+
+</script>
+    
+<style>
 #contactInput {
   background-image: url('/css/searchicon.png');
   background-position: 10px 12px;
@@ -15,74 +587,684 @@
   padding: 12px 20px 12px 40px;
   border: 1px solid #ddd;
   margin-bottom: 12px;
+	box-sizing: border-box;
 }
-
-#conactsList {
+#conactsList, #conactList, #conactListMore {
   list-style-type: none;
   padding: 0;
   margin: 0;
+	box-sizing: border-box;
 }
-
-#conactsList li a {
-  border: 1px solid #ddd;
+#conactsList, #conactList, #conactListMore li {
+    background-color: #333;
+	}
+#conactsList, #conactList, #conactListMore li.header {
+		background-color: #e2e2e2;
+	}
+#conactsList, #conactList, #conactListMore li a {
+ /* border: 1px solid #ddd;*/
   margin-top: -1px; /* Prevent double borders */
-  background-color: #f6f6f6;
+  background-color: #333;
   padding: 12px;
   text-decoration: none;
   font-size: 18px;
-  color: black;
-  display: block
+  color: #ff2e00;
+padding: 6.5px;
+	  box-sizing: border-box;
 }
-
-#conactsList li a.header {
+#conactsList, #conactList, #conactListMore li a.header {
   background-color: #e2e2e2;
   cursor: default;
+	box-sizing: border-box;
 }
-
-#conactsList li a:hover:not(.header) {
+#conactsList, #conactList, #conactListMore li a:hover:not(.header) {
   background-color: #eee;
+	box-sizing: border-box;
 }
-</style>
-</head>
-<body>
-
-<h2>My Phonebook</h2>
-
-<input type="text" id="contactInput" onkeyup="searchContact()" placeholder="Search for names.." title="Type in a name">
-
-<ul id="conactsList">
-  <li><a href="#" class="header">A</a></li>
-  <li><a href="#">Adele</a></li>
-  <li><a href="#">Agnes</a></li>
-
-  <li><a href="#" class="header">B</a></li>
-  <li><a href="#">Billy</a></li>
-  <li><a href="#">Bob</a></li>
-
-  <li><a href="#" class="header">C</a></li>
-  <li><a href="#">Calvin</a></li>
-  <li><a href="#">Christina</a></li>
-  <li><a href="#">Cindy</a></li>
-</ul>
-
-<script>
-function searchContact() {
-    let input, filter, ul, li, a, i;
-    input = document.getElementById("contactInput");
-    filter = input.value.toUpperCase();
-    ul = document.getElementById("conactsList");
-    li = ul.getElementsByTagName("li");
-    for (i = 0; i < li.length; i++) {
-        a = li[i].getElementsByTagName("a")[0];
-        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
-            li[i].style.display = "";
-        } else {
-            li[i].style.display = "none";
-
-        }
+.close2, .close{
+    color: #000;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+#vvod, #editSave {
+    font-size: 18px;
+    font-family: "Arial";
+    border: 1px;
+    solid-color: red;
+    padding: 10px;
+    border-radius: 5px;
+}	
+</style>  
+  
+	<style> 
+input[type=text] {
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 0;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('/css/searchicon.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 19px 10px 2px 50px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+input[type=text]:focus {
+    width: 100%;
+}
+</style>  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  	
+	
+	
+	
+	  
+	  
+	
+	
+	<style>
+    html, body{
+      width: 100% !important;
+     
+      margin: 0;
+      padding: 0;
     }
+    #contactform { 
+  position: relative; 
+  z-index: 1; 
+  width: auto;
+  margin: 0px auto 0;
+  padding: 10px;
+  background: black;
+  height: auto;
+  opacity: .60;
+ 
+	    text-align: center;
+	  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        font-family: "Josefin Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 2.5em;
+        font-weight: 700;
+        line-height: normal;
+        color: #fff; 
 }
-</script>
-
-</body>
+    #contactform2 { 
+  position: relative; 
+  z-index: 1; 
+  width: auto;
+  margin: 0px auto 0;
+  padding: 0px;
+  background: #000;
+  height: auto;
+  opacity: .90; 
+	    text-align: center;
+	  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        font-family: "Josefin Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 2.5em;
+        font-weight: 700;
+        line-height: normal;
+        color: #fff; 
+}
+      text-align: center;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        font-family: "Josefin Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 1.5em;
+        font-weight: 700;
+        line-height: normal;
+        color: #fff; 
+ 
+}
+  #mymap {
+  width: 100%;
+  height: 100%;
+  position:absolute;
+ margin:0;
+ padding:0;
+  top: 0; 
+  left: 0;
+bottom: 0;
+right: 0;	  
+  z-index: 0; 
+  
+}
+   
+</style>
+<style>
+	
+body{
+  font-family:sans-serif;
+  background-image: -moz-linear-gradient(30deg, $start 0%, $end 100%);
+	background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,$start), color-stop(100%,$end));
+	background: -webkit-linear-gradient(30deg, $start 0%,$end 100%);
+	background: -o-linear-gradient(30deg, $start 0%,$end 100%);
+	background: -ms-linear-gradient(30deg, $start 0%,$end 100%);
+	background: linear-gradient(30deg, $start 0%,$end 100%);
+}
+h1{
+  font-size:1.2em;
+  text-align:center;
+}
+input{
+  width:100%;
+  box-sizing:border-box;
+  font-size:1em;
+  margin-top:0.5em;
+  padding:0.5em;
+}
+input:focus{
+  outline:none;
+  text-decoration: none;
+  color: #1d9b6c;
+  cursor: pointer; 
+}
+input::after{
+  width:100%;
+  height:10px;
+  background:red;
+}
+#navigation{
+ position: relative;
+ padding: 10px;
+}
+.nav-list {
+    width: 92.5%;
+    max-width: 50em;
+    text-align: center;
+    padding: 0;
+    margin: auto;
+}
+.nav-list li{
+  list-style:none;
+  display:inline-block;
+    background:rgba(256,256,256,0.5);
+    padding:0.7em;
+    margin:0 0.5em;
+    border: 2px solid white;
+  
+  border-radius: 100% !important;
+ 
+  color: #ff5833;
+  -webkit-transition: background 0.3s ease-in-out;
+  -moz-transition: background 0.3s ease-in-out;
+  transition: background 0.3s ease-in-out;
+  }
+ 
+  li.active{
+    background-color:rgba(256,256,256,0.95);
+  }
+.nav-list li:hover,
+.nav-list li:focus {
+  text-decoration: none;
+  color: #1D9B8E;
+  cursor: pointer;
+}
+ .panel i.animated {
+  -webkit-transition-property: -webkit-transform;
+  -webkit-transition-duration: 1s;
+  -moz-transition-property: -moz-transform;
+	 -moz-transition-duration: 1s;
+	}
+.panel:hover i.animated {
+  -webkit-animation-name: pulse;
+  -moz-animation-name: pulse;
+  -webkit-animation-duration: 1.5s;
+  -moz-animation-duration: 1.5s;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-timing-function: linear;
+}    
+ 
+.panel{
+  position: relative;
+  background:rgb(250,250,250);
+  padding:1em;
+  width:92.5%;
+  margin:auto;
+  max-width:30em;
+  height: 92.5%;
+}
+		</style>
+	<style>
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 1em;
+  margin-bottom: 0.6em;
+  font-size: 3.4em;
+  font-weight: 300;
+  
+}
+p {
+font-size: 1.8em;
+}
+ img {
+  max-width: 100%;
+  height: auto;
+}
+a {
+  color: #42DCA3;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.intro {
+  display: table;
+  width: 100%;
+  height: auto;
+  padding: 100px 0;
+  text-align: center;
+  color: white;
+  background: url(../img/) no-repeat bottom center scroll;
+  background-color: black;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+.intro .intro-body {
+  display: table-cell;
+  vertical-align: middle;
+}
+.intro .intro-body .brand-heading {
+  font-size: 40px;
+}
+.intro .intro-body .intro-text {
+  font-size: 18px;
+}
+		.btn-circle {
+  width: 42px;
+  height: 42px;
+  margin-top: 15px;
+  padding: 7px 16px;
+  border: 2px solid white;
+  border-radius: 100% !important;
+  font-size: 25px;
+  color: white;
+  background: transparent;
+  -webkit-transition: background 0.3s ease-in-out;
+  -moz-transition: background 0.3s ease-in-out;
+  transition: background 0.3s ease-in-out;
+}
+	.btn {
+  text-transform: uppercase;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+	}
+.btn-circle i.animated {
+  -webkit-transition-property: -webkit-transform;
+  -webkit-transition-duration: 1s;
+  -moz-transition-property: -moz-transform;
+  -moz-transition-duration: 1s;
+}
+.btn-circle:hover i.animated {
+  -webkit-animation-name: pulse;
+  -moz-animation-name: pulse;
+  -webkit-animation-duration: 1.5s;
+  -moz-animation-duration: 1.5s;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-timing-function: linear;
+}
+.btn {
+  text-transform: uppercase;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  border-radius: 0;
+}
+.btn-default {
+  border: 1px solid #42DCA3;
+  color: #42DCA3;
+  background-color: transparent;
+}
+.btn-default:hover,
+.btn-default:focus {
+  border: 1px solid #42DCA3;
+  outline: none;
+  color: black;
+  background-color: #42DCA3;
+}
+		
+		
+		   @media (min-width: 767px) {
+  
+ #contactform { 
+  position: relative; 
+  z-index: 1;
+  width: auto;
+  margin: 90px auto 0;
+  padding: 10px;
+  
+}
+			   
+  #contactform2 { 
+  position: relative; 
+  z-index: 1; 
+  width: auto;
+  margin: 90px auto 0;
+  padding: 50px;
+   
+}
+  #mymap {
+	  position: absolute !important;
+    width: 100%;
+  height: 100%;
+	  padding: 0px;
+  }
+	      
+ .nav-list li{
+  list-style:none;
+  display:inline-block;
+    background:rgba(256,256,256,0.5);
+    padding:0.7em;
+    margin:0 0.9em;
+    border: 4px solid white;	 
+	      }
+}
+		@media (min-width: 768px) {
+  .intro {
+    height: 100%;
+    padding: 0;
+  }
+  .intro .intro-body .brand-heading {
+    font-size: 100px;
+  }
+  .intro .intro-body .intro-text {
+    font-size: 26px;
+  }
+.btn-circle {
+  width: 70px;
+  height: 70px;
+  margin-top: 15px;
+  padding: 7px 16px;
+  border: 2px solid white;
+  border-radius: 100% !important;
+  font-size: 40px;
+  color: white;
+  background: transparent;
+  -webkit-transition: background 0.3s ease-in-out;
+  -moz-transition: background 0.3s ease-in-out;
+  transition: background 0.3s ease-in-out;
+}
+.btn-circle:hover,
+.btn-circle:focus {
+  outline: none;
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+}			
+}
+		@media only screen and (max-width: 360px) {
+  h1 {
+    font-size: 3em;
+  }
+  p {
+    font-size: 0.6em;
+  }
+			 #mymap {
+	  position: absolute !important;
+    width: 100%;
+  height: 100%;
+	  padding: 0px;
+  }
+}
+			@media \0screen {
+				 #mymap {
+	  position: absolute !important;
+    width: 100%;
+  height: 100%;
+	  padding: 0px;
+  }
+ img { 
+    width: auto; 
+  }
+}
+		
+		
+</style> 
+<style>
+		.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+.modal2 {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+.modal-content{
+    background-color: antiquewhite;
+    margin: 15% auto;
+    padding: 20px;
+    border: 2px solid #2a8539;
+    border-radius: 2px;
+    width: 80%;
+    font-size: 18px;
+    font-family: "Arial";
+    color: rgb(0, 0, 0);
+    line-height: 1.667;
+    text-align: left;
+}
+.modal-content2{
+    background-color: #64fac0;
+    margin: 15% auto;
+    padding: 20px;
+    border: 2px solid #856539;
+    border-radius: 2px;
+    width: 80%;
+    font-size: 18px;
+    font-family: "Arial";
+    color: rgb(0, 0, 0);
+    line-height: 1.667;
+    text-align: left;
+}
+	
+		</style>		
+<script>
+var map = null;
+// When the window has finished loading create our google map below
+google.maps.event.addDomListener(window, 'load', init);
+google.maps.event.addDomListener(window, 'resize', function() {
+    map.setCenter(new google.maps.LatLng(49.574036, 34.5113945));
+});
+      // Note: This example requires that you consent to location sharing when
+      // prompted by your browser. If you see the error "The Geolocation service
+      // failed.", it means you probably did not give permission for the browser to
+      // locate you.
+      function initMap() {
+        var map = new google.maps.Map(document.getElementById('mymap'), {
+          center: {lat: 49.574036, lng: 34.5113945},
+          zoom: 6,
+          styles: [
+            {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
+            {elementType: 'labels.text.stroke', stylers: [{color: '#242f3e'}]},
+            {elementType: 'labels.text.fill', stylers: [{color: '#746855'}]},
+            {
+              featureType: 'administrative.locality',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#d59563'}]
+            },
+            {
+              featureType: 'poi',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#d59563'}]
+            },
+            {
+              featureType: 'poi.park',
+              elementType: 'geometry',
+              stylers: [{color: '#263c3f'}]
+            },
+            {
+              featureType: 'poi.park',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#6b9a76'}]
+            },
+            {
+              featureType: 'road',
+              elementType: 'geometry',
+              stylers: [{color: '#38414e'}]
+            },
+            {
+              featureType: 'road',
+              elementType: 'geometry.stroke',
+              stylers: [{color: '#212a37'}]
+            },
+            {
+              featureType: 'road',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#9ca5b3'}]
+            },
+            {
+              featureType: 'road.highway',
+              elementType: 'geometry',
+              stylers: [{color: '#746855'}]
+            },
+            {
+              featureType: 'road.highway',
+              elementType: 'geometry.stroke',
+              stylers: [{color: '#1f2835'}]
+            },
+            {
+              featureType: 'road.highway',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#f3d19c'}]
+            },
+            {
+              featureType: 'transit',
+              elementType: 'geometry',
+              stylers: [{color: '#2f3948'}]
+            },
+            {
+              featureType: 'transit.station',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#d59563'}]
+            },
+            {
+              featureType: 'water',
+              elementType: 'geometry',
+              stylers: [{color: '#17263c'}]
+            },
+            {
+              featureType: 'water',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#515c6d'}]
+            },
+            {
+              featureType: 'water',
+              elementType: 'labels.text.stroke',
+              stylers: [{color: '#17263c'}]
+            }
+          ]
+        });
+       var infoWindow = new google.maps.InfoWindow({map: map});
+        // Try HTML5 geolocation.
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+            infoWindow.setPosition(pos);
+            infoWindow.setContent('The best sity!');
+            map.setCenter(pos);
+          }, function() {
+            handleLocationError(true, infoWindow, map.getCenter());
+          });
+        } else {
+          // Browser doesn't support Geolocation
+          handleLocationError(false, infoWindow, map.getCenter());
+        }
+      }
+      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(browserHasGeolocation ?
+                              'Error: The Geolocation service failed.' :
+                              'Error: Your browser doesn\'t support geolocation.');
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA3AhxWKKpXIAi9-zWrP61IN-5viMwakzQ&callback=initMap">
+    </script>
+		
+  <script>
+  var result = '';
+  // Создаем распознаватель
+  var recognizer = new webkitSpeechRecognition();
+  // Ставим опцию, чтобы распознавание началось ещё до того, как пользователь закончит говорить
+  recognizer.interimResults = true;
+  // Какой язык будем распознавать?
+  recognizer.lang = 'ru-Ru';//en-En
+  //Используем колбек для обработки результатов
+  recognizer.onresult = function (event) {
+    result = event.results[event.resultIndex];//var 
+    if (result.isFinal) {
+      //alert('Вы сказали: ' + result[0].transcript);
+      if (result[0]=="hi"){
+        open folder/URL oor start recording or answer send to social media;}
+    } else {
+      console.log('Промежуточный результат: ',
+      result[0].transcript);
+    }
+  };
+  //function speech (result) {//(result)
+    // Начинаем слушать микрофон и распознавать голос
+   // recognizer.start();
+  //}
+ // var synth = window.speechSynthesis;//var synth = window.event.results[event.resultIndex];
+	  
+	  
+//var utterance = new SpeechSynthesisUtterance('How about we say this now? This is quite a long sentence to say.');
+ // function talk () {
+    //synth.speak (utterance);
+ // }
+  //function stop () {
+    //synth.pause();
+ // }
+  </script>
+ 
+	
+    </body>
 </html>
