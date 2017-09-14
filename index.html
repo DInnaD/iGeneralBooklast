@@ -25,7 +25,7 @@
 			});
 		</script-->
 
-	<link href="css/bootstrap.min.css" rel="stylesheet"><!-- Custom CSS -->
+	
 	<link href="css/business-casual.css" rel="stylesheet"><!-- Fonts -->
 	
 	<link href="https://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css"><!--link rel="stylesheet" href="libs/font-awesome-4.7.0/css/font-awesome.min.css"-->
@@ -56,7 +56,7 @@ function validate_form ( )
 	
 	<div id="mymap" style="position: absolute !important; top: 0px;"></div>
 	<div id="contactform" class="ui-mobile-viewport ui-overlay-a" style="
-    overflow: none;
+    overflow: none !important;
 ">
 	<!-- #home Page -->
 		<div data-role="page" id="home">
@@ -102,7 +102,11 @@ function validate_form ( )
 	</div><!--black-->
 		<!-- ADD PAGE -->
 		<div data-role="page" id="add">
-	<hr>
+	<header data-role="header" data-theme="b">
+
+		
+		<hr>
+			
 		<div class="brand">
 			<a href="#" id="toggler" style="color: #42DCA3;" title="Click what to do"><i aria-hidden="true" class="fa fa-info-circle" style="35px !important;"></i></a>General Book
 		</div><!--"brand"-->
@@ -110,14 +114,7 @@ function validate_form ( )
 			<h5></h5>
 			<p style="color: #fff !important; font-size: 0.8em;">Instruction<br></p>
 		</div>
-		<div id="navigation">
-			<ul class="nav-list">
-				<li class="btn btn-circle" id="js-show-all"><a href="#home" data-transition="none"><i aria-hidden="true" class="fa fa-home"></i></a></li>
-				<li class="btn btn-circle" id="js-search"><i aria-hidden="true" class="fa fa-search"></i></li>
-				<li class="btn btn-circle" id="add"><a href="#add" data-transition="none"><i aria-hidden="true" class="fa fa-plus"></i></a></li>
-			</ul>
-		</div>
-		<hr>
+		</header>
 	<div data-role="content">
 			<h3>iGeneral Book</h3>
 			<form id="addForm">
@@ -144,7 +141,11 @@ function validate_form ( )
 		</div>
 <!-- EDIT PAGE -->
 		<div data-role="page" id="edit">
-<hr>
+<header data-role="header" data-theme="b">
+
+		
+		<hr>
+			
 		<div class="brand">
 			<a href="#" id="toggler" style="color: #42DCA3;" title="Click what to do"><i aria-hidden="true" class="fa fa-info-circle" style="35px !important;"></i></a>General Book
 		</div><!--"brand"-->
@@ -152,14 +153,7 @@ function validate_form ( )
 			<h5></h5>
 			<p style="color: #fff !important; font-size: 0.8em;">Instruction<br></p>
 		</div>
-		<div id="navigation">
-			<ul class="nav-list">
-				<li class="btn btn-circle" id="js-show-all"><a href="#home" data-transition="none"><i aria-hidden="true" class="fa fa-home"></i></a></li>
-				<li class="btn btn-circle" id="js-search"><i aria-hidden="true" class="fa fa-search"></i></li>
-				<li class="btn btn-circle" id="add"><a href="#add" data-transition="none"><i aria-hidden="true" class="fa fa-plus"></i></a></li>
-			</ul>
-		</div>
-		<hr>
+		</header>
 		<div data-role="content">
 			<h3>Edit Your Contact</h3>
 			<form id="editForm">
