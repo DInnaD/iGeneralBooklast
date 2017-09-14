@@ -25,6 +25,7 @@
 		<div id="mymap" style="position: absolute !important; top: 0px; background-color: none !important;"></div>
 	<div id="contactform" class="ui-mobile-viewport ui-overlay-a" style="
     overflow: none !important;">
+		<div id="contactformHead"> 
 		<div class="brand">
       <a href="#" id="toggler" style="color: #42DCA3;" title="Click what to do"><i aria-hidden="true" class="fa fa-info-circle" style="35px !important;"></i></a>General Book
     </div><!--"brand"-->
@@ -35,7 +36,7 @@
 		<!-- #home Page -->
 		<div data-role="page" id="home" style="position: relative !important; background-color: none !important!;">
 			<header data-role="header" data-theme="b">
-				
+			</div>	
 			</header>
 			
 			<div data-role="navbar">
@@ -48,7 +49,7 @@
 			<div data-role="content">
 				
 				
-				<ul id="stats" data-role="listview" data-filter="true" data-filter-placeholder="Filter runs by date or distance" data-inset="true"></ul>
+				<ul id="stats" data-role="listview" data-filter="true" data-filter-placeholder="Search.." data-inset="true"></ul>
 				<br>
 				<button id="clearContacts" onclick="return confirm('Are You Sure?')" data-theme="b">Clear iGeneralBook</button>
 				<br>
@@ -75,7 +76,7 @@
 			</div>
 			
 			<div data-role="content">
-			<h3>Add Contact</h3>
+			<p>Add Contact</p>
 			<form id="addForm">
 				<label for="addName"></label>
       <div class="ui-btn ui-btn-b ui-corder-all"><input type="text" class="form-field" id="addName" required="required" placeholder="Enter Name" class="signupForm form-field" placeholder="Enter Name" /> 
@@ -113,7 +114,7 @@
 			</div>
 			
 			<div data-role="content">
-			<h3>Edit Contact</h3>
+			<p>Edit Contact</p>
 			<form id="editForm">
 				
 				 <label for="editName"></label>
@@ -189,6 +190,24 @@ input[type=text]:focus {
       margin: 0;
       padding: 0;
     }
+		 #contactformHead { 
+
+  z-index: 1; 
+  width: auto;
+  margin: 0px auto 0;
+  padding: 10px;
+  background: black;
+  height: auto;
+  opacity: .60;
+ 
+      text-align: center;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        font-family: "Josefin Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 2.5em;
+        font-weight: 700;
+        line-height: normal;
+        color: #fff; 
+}
     #contactform { 
   position: relative; 
   z-index: 1; 
@@ -202,8 +221,8 @@ input[type=text]:focus {
       text-align: center;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
         font-family: "Josefin Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
-        font-size: 2.5em;
-        font-weight: 700;
+        
+        
         line-height: normal;
         color: #fff; 
 }	
