@@ -1,11 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	
-	<meta content="" name="description">
-	<meta content="" name="author">
-	<title>iGeneralBook</title><!-- Bootstrap Core CSS -->
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+	<head>
+	<title>iGeneral Book</title>
 	<!-- jQuery mobile, jQuery UI, custom stylesheets -->
 	
 	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
@@ -24,98 +20,55 @@
 				});
 			});
 		</script-->
-
-	
-	<link href="css/business-casual.css" rel="stylesheet"><!-- Fonts -->
-	
-	<link href="https://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css"><!--link rel="stylesheet" href="libs/font-awesome-4.7.0/css/font-awesome.min.css"-->
-	<script src="https://use.fontawesome.com/053cca04b2.js">
-	</script>
-	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-	<!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-	<script type="text/javascript">
-/*
-function validate_form ( )
-{
-	valid = true;
-        if (( document.form.name1.value || document.form.phone.value) == "" )
-        {
-                alert ( "Please, feel full 'Required Name and Phone data '." );
-                valid = false;
-        }
-        return valid;
-}
-*/
-</script>
-</head>
-<body>
-	
-	<div id="mymap" style="position: absolute !important; top: 0px;"></div>
-	<div id="contactform" class="ui-mobile-viewport ui-overlay-a" style="
+	</head>
+	<body>
+		<div id="mymap" style="position: absolute !important; top: 0px;"></div>
+	<!--div id="contactform" class="ui-mobile-viewport ui-overlay-a" style="
     overflow: none !important;
-">
-	<!-- #home Page -->
-		<div data-role="page" id="home">
-		<header data-role="header" data-theme="b">
-
-		
-		<hr>
+"-->
+		<!-- #home Page -->
+		<div data-role="page" id="home" style="position: relative !important;">
+			<header data-role="header" data-theme="b">
+				<h1>iGeneral Book</h1>
+			</header>
 			
-		<div class="brand">
-			<a href="#" id="toggler" style="color: #42DCA3;" title="Click what to do"><i aria-hidden="true" class="fa fa-info-circle" style="35px !important;"></i></a>General Book
-		</div><!--"brand"-->
-		<div id="box" style="display: none; text-align: center; position: relative;">
-			<h5></h5>
-			<p style="color: #fff !important; font-size: 0.8em;">Instruction<br></p>
-		</div>
-		</header>	
-		<div data-role="navbar">
-			<ul>
-				<li><a href="#home" data-transition="none" data-icon="home">
-					<!--i aria-hidden="true" class="fa fa-home"></i--></a></li>
-				<!--li class="btn btn-circle" ><i aria-hidden="true" class="fa fa-search"></i></li-->
-				<li><a href="#add" data-transition="none"  data-icon="plus">
-					<!--i aria-hidden="true" class="fa fa-plus"></i--></a></li>
-			</ul>
-		</div>
-		<hr>
-		<div data-role="content">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#home" data-transition="none" data-icon="home"></a></li>
+					<li><a href="#add" data-transition="none" data-icon="plus"></a></li>
+				</ul>
+			</div>
+			
+			<div data-role="content">
 				
 				
-				<ul id="stats" data-role="listview" data-filter="true" data-filter-placeholder="Search.." data-inset="true"></ul>
+				<ul id="stats" data-role="listview" data-filter="true" data-filter-placeholder="Filter runs by date or distance" data-inset="true"></ul>
 				<br>
 				<button id="clearContacts" onclick="return confirm('Are You Sure?')" data-theme="b">Clear iGeneralBook</button>
 				<br>
 				<!--button id="compareContacts" onclick="return confirm('Are You Sure delete contact with the same phone data?')" data-theme="b">Clear the same contact</button-->
 			
 			</div>
+		
 			<footer id="footer" data-role="footer" data-theme="b">
 				<h4>iGeneral Book 2017</h4>
 			</footer>
-		</div><!--home-->
-
-
-	</div><!--black-->
-		<!-- ADD PAGE -->
-		<div data-role="page" id="add">
-	<header data-role="header" data-theme="b">
-
-		
-		<hr>
-			
-		<div class="brand">
-			<a href="#" id="toggler" style="color: #42DCA3;" title="Click what to do"><i aria-hidden="true" class="fa fa-info-circle" style="35px !important;"></i></a>General Book
-		</div><!--"brand"-->
-		<div id="box" style="display: none; text-align: center; position: relative;">
-			<h5></h5>
-			<p style="color: #fff !important; font-size: 0.8em;">Instruction<br></p>
 		</div>
-		</header>
-	<div data-role="content">
+		
+		<!-- ADD PAGE -->
+		<div data-role="page" id="add" style="position: relative !important;">
+			<header data-role="header" data-theme="b">
+				<h1>iGeneral Book</h1>
+			</header>
+			
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#home" data-transition="none" data-icon="home"></a></li>
+					<li><a href="#add" data-transition="none" data-icon="plus"></a></li>
+				</ul>
+			</div>
+			
+			<div data-role="content">
 			<h3>iGeneral Book</h3>
 			<form id="addForm">
 				<label for="addName"></label>
@@ -139,22 +92,21 @@ function validate_form ( )
 				<h4>iGeneral Book 2017</h4>
 			</footer>
 		</div>
-<!-- EDIT PAGE -->
-		<div data-role="page" id="edit">
-<header data-role="header" data-theme="b">
-
 		
-		<hr>
+		<!-- EDIT PAGE -->
+		<div data-role="page" id="edit" style="position: relative !important;">
+			<header data-role="header" data-theme="b">
+				<h1>iGeneral Book</h1>
+			</header>
 			
-		<div class="brand">
-			<a href="#" id="toggler" style="color: #42DCA3;" title="Click what to do"><i aria-hidden="true" class="fa fa-info-circle" style="35px !important;"></i></a>General Book
-		</div><!--"brand"-->
-		<div id="box" style="display: none; text-align: center; position: relative;">
-			<h5></h5>
-			<p style="color: #fff !important; font-size: 0.8em;">Instruction<br></p>
-		</div>
-		</header>
-		<div data-role="content">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#home" data-transition="none" data-icon="home"></a></li>
+					<li><a href="#add" data-transition="none" data-icon="plus"></a></li>
+				</ul>
+			</div>
+			
+			<div data-role="content">
 			<h3>Edit Your Contact</h3>
 			<form id="editForm">
 				
@@ -178,8 +130,77 @@ function validate_form ( )
 				<h4>iGeneral Book 2017</h4>
 			</footer>
 		</div>
-<style type="text/css">
+	
+		<!-- #home Page >
+		<div data-role="page" id="homeMore">
+			<header data-role="header" data-theme="b">
+				<h1>iGeneral Book</h1>
+			</header>
+			
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#home" data-transition="none" data-icon="home"></a></li>
+					<li><a href="#add" data-transition="none" data-icon="plus"></a></li>
+				</ul>
+			</div>
+			
+			<div data-role="content">
+				
+				
+				<ul id="statsMore" data-role="listviewMore" data-filter="true" data-filter-placeholder="Filter runs by date or distance" data-inset="true"></ul>
+				<br>
+			</div>
 		
+			<footer data-role="footer" data-theme="b">
+				<h4>iGeneral Book 2017</h4>
+			</footer>
+		</div-->
+
+	<!--/div><!--black-->	
+	  <!--style> 
+input[type=text] {
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 0;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('/css/searchicon.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 19px 10px 2px 50px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+input[type=text]:focus {
+    width: 100%;
+}
+</style--> 
+	<style type="text/css">
+	 html, body{
+      width: 100% !important;
+     
+      margin: 0;
+      padding: 0;
+    }
+    #contactform { 
+  position: relative; 
+  z-index: 1; 
+  width: auto;
+  margin: 0px auto 0;
+  padding: 10px;
+  background: black;
+  height: auto;
+  opacity: .60;
+ 
+      text-align: center;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        font-family: "Josefin Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 2.5em;
+        font-weight: 700;
+        line-height: normal;
+        color: #fff; 
+}	
 		body{
 	text-align:center;
 }
@@ -192,6 +213,42 @@ ul{
 #stats p{
 	color:red;
 }
+
+ #mymap {
+  width: 100%;
+  height: 100%;
+  position:absolute;
+ margin:0;
+ padding:0;
+  top: 0; 
+  left: 0;
+bottom: 0;
+right: 0;   
+  z-index: 0; 
+  
+}
+      @media only screen and (max-width: 360px) {
+  h1 {
+    font-size: 3em;
+  }
+  p {
+    font-size: 0.6em;
+  }
+      #mymap {
+    position: absolute !important;
+    width: 100%;
+  height: 100%;
+    padding: 0px;
+  }
+}
+      @media \0screen {
+         #mymap {
+    position: absolute !important;
+    width: 100%;
+  height: 100%;
+    padding: 0px;
+  }
+  }
 	</style>
 	<script>
 		// Need to use pageinit, not ready be/c we want the index page to run once!deleteContact
@@ -574,535 +631,7 @@ try{
       $('#editInfo').val(localStorage.getItem('currentInfo'));
 	 }
 });
-
-</script>
-    
-<style>
-#contactInput {
-  background-image: url('/css/searchicon.png');
-  background-position: 10px 12px;
-  background-repeat: no-repeat;
-  width: 100%;
-  font-size: 16px;
-  padding: 12px 20px 12px 40px;
-  border: 1px solid #ddd;
-  margin-bottom: 12px;
-	box-sizing: border-box;
-}
-#conactsList, #conactList, #conactListMore {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-	box-sizing: border-box;
-}
-#conactsList, #conactList, #conactListMore li {
-    background-color: #333;
-	}
-#conactsList, #conactList, #conactListMore li.header {
-		background-color: #e2e2e2;
-	}
-#conactsList, #conactList, #conactListMore li a {
- /* border: 1px solid #ddd;*/
-  margin-top: -1px; /* Prevent double borders */
-  background-color: #333;
-  padding: 12px;
-  text-decoration: none;
-  font-size: 18px;
-  color: #ff2e00;
-padding: 6.5px;
-	  box-sizing: border-box;
-}
-#conactsList, #conactList, #conactListMore li a.header {
-  background-color: #e2e2e2;
-  cursor: default;
-	box-sizing: border-box;
-}
-#conactsList, #conactList, #conactListMore li a:hover:not(.header) {
-  background-color: #eee;
-	box-sizing: border-box;
-}
-.close2, .close{
-    color: #000;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-#vvod, #editSave {
-    font-size: 18px;
-    font-family: "Arial";
-    border: 1px;
-    solid-color: red;
-    padding: 10px;
-    border-radius: 5px;
-}	
-</style>  
-  
-	<style> 
-input[type=text] {
-    width: 130px;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 0;
-    font-size: 16px;
-    background-color: white;
-    background-image: url('/css/searchicon.png');
-    background-position: 10px 10px; 
-    background-repeat: no-repeat;
-    padding: 19px 10px 2px 50px;
-    -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
-}
-input[type=text]:focus {
-    width: 100%;
-}
-</style>  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  	
-	
-	
-	
-	  
-	  
-	
-	
-	<style>
-    html, body{
-      width: 100% !important;
-     
-      margin: 0;
-      padding: 0;
-    }
-    #contactform { 
-  position: relative; 
-  z-index: 1; 
-  width: auto;
-  margin: 0px auto 0;
-  padding: 10px;
-  background: black;
-  height: auto;
-  opacity: .60;
- 
-	    text-align: center;
-	  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-        font-family: "Josefin Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
-        font-size: 2.5em;
-        font-weight: 700;
-        line-height: normal;
-        color: #fff; 
-}
-    #contactform2 { 
-  position: relative; 
-  z-index: 1; 
-  width: auto;
-  margin: 0px auto 0;
-  padding: 0px;
-  background: #000;
-  height: auto;
-  opacity: .90; 
-	    text-align: center;
-	  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-        font-family: "Josefin Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
-        font-size: 2.5em;
-        font-weight: 700;
-        line-height: normal;
-        color: #fff; 
-}
-      text-align: center;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-        font-family: "Josefin Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
-        font-size: 1.5em;
-        font-weight: 700;
-        line-height: normal;
-        color: #fff; 
- 
-}
-  #mymap {
-  width: 100%;
-  height: 100%;
-  position:absolute;
- margin:0;
- padding:0;
-  top: 0; 
-  left: 0;
-bottom: 0;
-right: 0;	  
-  z-index: 0; 
-  
-}
-   
-</style>
-<style>
-	
-body{
-  font-family:sans-serif;
-  background-image: -moz-linear-gradient(30deg, $start 0%, $end 100%);
-	background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,$start), color-stop(100%,$end));
-	background: -webkit-linear-gradient(30deg, $start 0%,$end 100%);
-	background: -o-linear-gradient(30deg, $start 0%,$end 100%);
-	background: -ms-linear-gradient(30deg, $start 0%,$end 100%);
-	background: linear-gradient(30deg, $start 0%,$end 100%);
-}
-h1{
-  font-size:1.2em;
-  text-align:center;
-}
-input{
-  width:100%;
-  box-sizing:border-box;
-  font-size:1em;
-  margin-top:0.5em;
-  padding:0.5em;
-}
-input:focus{
-  outline:none;
-  text-decoration: none;
-  color: #1d9b6c;
-  cursor: pointer; 
-}
-input::after{
-  width:100%;
-  height:10px;
-  background:red;
-}
-#navigation{
- position: relative;
- padding: 10px;
-}
-.nav-list {
-    width: 92.5%;
-    max-width: 50em;
-    text-align: center;
-    padding: 0;
-    margin: auto;
-}
-.nav-list li{
-  list-style:none;
-  display:inline-block;
-    background:rgba(256,256,256,0.5);
-    padding:0.7em;
-    margin:0 0.5em;
-    border: 2px solid white;
-  
-  border-radius: 100% !important;
- 
-  color: #ff5833;
-  -webkit-transition: background 0.3s ease-in-out;
-  -moz-transition: background 0.3s ease-in-out;
-  transition: background 0.3s ease-in-out;
-  }
- 
-  li.active{
-    background-color:rgba(256,256,256,0.95);
-  }
-.nav-list li:hover,
-.nav-list li:focus {
-  text-decoration: none;
-  color: #1D9B8E;
-  cursor: pointer;
-}
- .panel i.animated {
-  -webkit-transition-property: -webkit-transform;
-  -webkit-transition-duration: 1s;
-  -moz-transition-property: -moz-transform;
-	 -moz-transition-duration: 1s;
-	}
-.panel:hover i.animated {
-  -webkit-animation-name: pulse;
-  -moz-animation-name: pulse;
-  -webkit-animation-duration: 1.5s;
-  -moz-animation-duration: 1.5s;
-  -webkit-animation-iteration-count: infinite;
-  -moz-animation-iteration-count: infinite;
-  -webkit-animation-timing-function: linear;
-  -moz-animation-timing-function: linear;
-}    
- 
-.panel{
-  position: relative;
-  background:rgb(250,250,250);
-  padding:1em;
-  width:92.5%;
-  margin:auto;
-  max-width:30em;
-  height: 92.5%;
-}
-		</style>
-	<style>
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin-top: 1em;
-  margin-bottom: 0.6em;
-  font-size: 3.4em;
-  font-weight: 300;
-  
-}
-p {
-font-size: 1.8em;
-}
- img {
-  max-width: 100%;
-  height: auto;
-}
-a {
-  color: #42DCA3;
-  -webkit-transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-}
-.intro {
-  display: table;
-  width: 100%;
-  height: auto;
-  padding: 100px 0;
-  text-align: center;
-  color: white;
-  background: url(../img/) no-repeat bottom center scroll;
-  background-color: black;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
-}
-.intro .intro-body {
-  display: table-cell;
-  vertical-align: middle;
-}
-.intro .intro-body .brand-heading {
-  font-size: 40px;
-}
-.intro .intro-body .intro-text {
-  font-size: 18px;
-}
-		.btn-circle {
-  width: 42px;
-  height: 42px;
-  margin-top: 15px;
-  padding: 7px 16px;
-  border: 2px solid white;
-  border-radius: 100% !important;
-  font-size: 25px;
-  color: white;
-  background: transparent;
-  -webkit-transition: background 0.3s ease-in-out;
-  -moz-transition: background 0.3s ease-in-out;
-  transition: background 0.3s ease-in-out;
-}
-	.btn {
-  text-transform: uppercase;
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 400;
-	}
-.btn-circle i.animated {
-  -webkit-transition-property: -webkit-transform;
-  -webkit-transition-duration: 1s;
-  -moz-transition-property: -moz-transform;
-  -moz-transition-duration: 1s;
-}
-.btn-circle:hover i.animated {
-  -webkit-animation-name: pulse;
-  -moz-animation-name: pulse;
-  -webkit-animation-duration: 1.5s;
-  -moz-animation-duration: 1.5s;
-  -webkit-animation-iteration-count: infinite;
-  -moz-animation-iteration-count: infinite;
-  -webkit-animation-timing-function: linear;
-  -moz-animation-timing-function: linear;
-}
-.btn {
-  text-transform: uppercase;
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 600;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  border-radius: 0;
-}
-.btn-default {
-  border: 1px solid #42DCA3;
-  color: #42DCA3;
-  background-color: transparent;
-}
-.btn-default:hover,
-.btn-default:focus {
-  border: 1px solid #42DCA3;
-  outline: none;
-  color: black;
-  background-color: #42DCA3;
-}
-		
-		
-		   @media (min-width: 767px) {
-  
- #contactform { 
-  position: relative; 
-  z-index: 1;
-  width: auto;
-  margin: 90px auto 0;
-  padding: 10px;
-  
-}
-			   
-  #contactform2 { 
-  position: relative; 
-  z-index: 1; 
-  width: auto;
-  margin: 90px auto 0;
-  padding: 50px;
-   
-}
-  #mymap {
-	  position: absolute !important;
-    width: 100%;
-  height: 100%;
-	  padding: 0px;
-  }
-	      
- .nav-list li{
-  list-style:none;
-  display:inline-block;
-    background:rgba(256,256,256,0.5);
-    padding:0.7em;
-    margin:0 0.9em;
-    border: 4px solid white;	 
-	      }
-}
-		@media (min-width: 768px) {
-  .intro {
-    height: 100%;
-    padding: 0;
-  }
-  .intro .intro-body .brand-heading {
-    font-size: 100px;
-  }
-  .intro .intro-body .intro-text {
-    font-size: 26px;
-  }
-.btn-circle {
-  width: 70px;
-  height: 70px;
-  margin-top: 15px;
-  padding: 7px 16px;
-  border: 2px solid white;
-  border-radius: 100% !important;
-  font-size: 40px;
-  color: white;
-  background: transparent;
-  -webkit-transition: background 0.3s ease-in-out;
-  -moz-transition: background 0.3s ease-in-out;
-  transition: background 0.3s ease-in-out;
-}
-.btn-circle:hover,
-.btn-circle:focus {
-  outline: none;
-  color: white;
-  background: rgba(255, 255, 255, 0.1);
-}			
-}
-		@media only screen and (max-width: 360px) {
-  h1 {
-    font-size: 3em;
-  }
-  p {
-    font-size: 0.6em;
-  }
-			 #mymap {
-	  position: absolute !important;
-    width: 100%;
-  height: 100%;
-	  padding: 0px;
-  }
-}
-			@media \0screen {
-				 #mymap {
-	  position: absolute !important;
-    width: 100%;
-  height: 100%;
-	  padding: 0px;
-  }
- img { 
-    width: auto; 
-  }
-}
-		
-		
-</style> 
-<style>
-		.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.8);
-}
-.modal2 {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.8);
-}
-.modal-content{
-    background-color: antiquewhite;
-    margin: 15% auto;
-    padding: 20px;
-    border: 2px solid #2a8539;
-    border-radius: 2px;
-    width: 80%;
-    font-size: 18px;
-    font-family: "Arial";
-    color: rgb(0, 0, 0);
-    line-height: 1.667;
-    text-align: left;
-}
-.modal-content2{
-    background-color: #64fac0;
-    margin: 15% auto;
-    padding: 20px;
-    border: 2px solid #856539;
-    border-radius: 2px;
-    width: 80%;
-    font-size: 18px;
-    font-family: "Arial";
-    color: rgb(0, 0, 0);
-    line-height: 1.667;
-    text-align: left;
-}
-	
-		</style>		
+	</script>
 <script>
 var map = null;
 // When the window has finished loading create our google map below
@@ -1228,43 +757,6 @@ google.maps.event.addDomListener(window, 'resize', function() {
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA3AhxWKKpXIAi9-zWrP61IN-5viMwakzQ&callback=initMap">
     </script>
-		
-  <script>
-  var result = '';
-  // Создаем распознаватель
-  var recognizer = new webkitSpeechRecognition();
-  // Ставим опцию, чтобы распознавание началось ещё до того, как пользователь закончит говорить
-  recognizer.interimResults = true;
-  // Какой язык будем распознавать?
-  recognizer.lang = 'ru-Ru';//en-En
-  //Используем колбек для обработки результатов
-  recognizer.onresult = function (event) {
-    result = event.results[event.resultIndex];//var 
-    if (result.isFinal) {
-      //alert('Вы сказали: ' + result[0].transcript);
-      if (result[0]=="hi"){
-        open folder/URL oor start recording or answer send to social media;}
-    } else {
-      console.log('Промежуточный результат: ',
-      result[0].transcript);
-    }
-  };
-  //function speech (result) {//(result)
-    // Начинаем слушать микрофон и распознавать голос
-   // recognizer.start();
-  //}
- // var synth = window.speechSynthesis;//var synth = window.event.results[event.resultIndex];
-	  
-	  
-//var utterance = new SpeechSynthesisUtterance('How about we say this now? This is quite a long sentence to say.');
- // function talk () {
-    //synth.speak (utterance);
- // }
-  //function stop () {
-    //synth.pause();
- // }
-  </script>
- 
 	
-    </body>
+</body>
 </html>
